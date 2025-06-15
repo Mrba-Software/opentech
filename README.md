@@ -1,13 +1,28 @@
 # OpenTech
 
-Ce projet est une application web moderne développée avec les technologies les plus récentes.
+Ce projet est un site web moderne développé avec HTML, CSS et JavaScript.
+
+## Structure du projet
+
+```
+opentech/
+├── index.html      # Page d'accueil
+├── about.html      # Page À propos
+├── contact.html    # Page Contact
+├── projects.html   # Page Projets
+├── services.html   # Page Services
+├── css/           # Styles CSS
+├── js/            # Scripts JavaScript
+├── netlify.toml   # Configuration Netlify
+└── .hintrc        # Configuration du linter
+```
 
 ## Technologies utilisées
 
-- React.js
-- Node.js
-- Express.js
-- MongoDB
+- HTML5
+- CSS3
+- JavaScript
+- Netlify pour le déploiement
 
 ## Installation
 
@@ -16,25 +31,11 @@ Ce projet est une application web moderne développée avec les technologies les
 git clone [URL_DU_REPO]
 ```
 
-2. Installez les dépendances :
-```bash
-npm install
-```
+2. Ouvrez le fichier `index.html` dans votre navigateur pour voir le site localement.
 
-3. Lancez l'application en mode développement :
-```bash
-npm run dev
-```
+## Déploiement
 
-## Structure du projet
-
-```
-opentech/
-├── src/           # Code source
-├── public/        # Fichiers statiques
-├── tests/         # Tests unitaires
-└── docs/          # Documentation
-```
+Le site est configuré pour être déployé sur Netlify. La configuration est définie dans le fichier `netlify.toml`.
 
 ## Contribution
 
