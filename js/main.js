@@ -9,43 +9,44 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Gestion du menu mobile
+// Attendre que le DOM soit chargé
 document.addEventListener('DOMContentLoaded', () => {
+  // Sélection des éléments
   const hamburger = document.querySelector('.hamburger');
   const navMenu = document.querySelector('.nav-menu');
   const body = document.body;
 
-  function toggleMenu() {
+  // Gestion du menu mobile
+  hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
     body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-  }
-
-  hamburger.addEventListener('click', (e) => {
-    e.stopPropagation();
-    toggleMenu();
   });
 
   // Fermer le menu quand on clique sur un lien
   document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', () => {
-      toggleMenu();
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+      body.style.overflow = '';
     });
   });
 
   // Fermer le menu quand on clique en dehors
   document.addEventListener('click', (e) => {
-    if (navMenu.classList.contains('active') && 
-        !hamburger.contains(e.target) && 
-        !navMenu.contains(e.target)) {
-      toggleMenu();
+    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+      body.style.overflow = '';
     }
   });
 
-  // Fermer le menu avec la touche Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-      toggleMenu();
+  // Fermer le menu quand on redimensionne la fenêtre
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+      body.style.overflow = '';
     }
   });
 });
