@@ -49,6 +49,31 @@ document.addEventListener('DOMContentLoaded', () => {
       body.style.overflow = '';
     }
   });
+
+  // Animation au défilement pour les cartes de projets
+  const projectCards = document.querySelectorAll('.project-card');
+  
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  projectCards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    observer.observe(card);
+  });
 });
 
 // Gestion du carrousel des témoignages
