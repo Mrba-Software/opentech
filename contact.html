@@ -1,215 +1,757 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Opentech - Contact</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Opentech Solutions</title>
+    <meta name="description" content="Contactez notre équipe d'experts en développement web et mobile. Devis gratuit, accompagnement personnalisé et solutions sur mesure.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'inter': ['Inter', 'sans-serif'],
+              'poppins': ['Poppins', 'sans-serif'],
+            },
+            colors: {
+              'primary': {
+                50: '#f0f9ff',
+                100: '#e0f2fe',
+                200: '#bae6fd',
+                300: '#7dd3fc',
+                400: '#38bdf8',
+                500: '#0ea5e9',
+                600: '#0284c7',
+                700: '#0369a1',
+                800: '#075985',
+                900: '#0c4a6e'
+              },
+              'secondary': {
+                50: '#f0fdf4',
+                100: '#dcfce7',
+                200: '#bbf7d0',
+                300: '#86efac',
+                400: '#4ade80',
+                500: '#22c55e',
+                600: '#16a34a',
+                700: '#15803d',
+                800: '#166534',
+                900: '#14532d'
+              },
+              'accent': {
+                50: '#fff5f5',
+                100: '#fed7d7',
+                200: '#feb2b2',
+                300: '#fc8181',
+                400: '#f56565',
+                500: '#e53e3e',
+                600: '#c53030',
+                700: '#9b2c2c',
+                800: '#822727',
+                900: '#63171b'
+              }
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/modern-style.css">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact - Opentech Solutions",
+        "description": "Contactez notre équipe d'experts en développement web et mobile",
+        "url": "https://opentech-solutions.fr/contact.html"
+    }
+    </script>
+  
+  <!-- Navigation Loader -->
+  <script src="js/navbar-loader.js"></script>
 </head>
-<body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">Opentech</div>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <ul class="nav-menu">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="about.html">À propos</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="projects.html">Réalisations</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <section class="contact-hero">
-      <h1>Contactez-nous</h1>
-      <p>Discutons de votre projet et voyons comment nous pouvons vous aider</p>
-    </section>
-
-    <section class="contact-content">
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h2>Nos Coordonnées</h2>
-          <div class="info-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <div>
-              <h3>Adresse</h3>
-              <p>Dakar, Sénégal</p>
-            </div>
-          </div>
-          <div class="info-item">
-            <i class="fas fa-envelope"></i>
-            <div>
-              <h3>Email</h3>
-              <p><a href="mailto:cheikhtidianesamba.ba@ucad.edu.sn">cheikhtidianesamba.ba@ucad.edu.sn</a></p>
-            </div>
-          </div>
-          <div class="info-item">
-            <i class="fas fa-phone"></i>
-            <div>
-              <h3>Téléphone</h3>
-              <p><a href="tel:+221706098343">+221 70 609 83 43</a></p>
-            </div>
-          </div>
-          <div class="info-item">
-            <i class="fab fa-linkedin"></i>
-            <div>
-              <h3>LinkedIn</h3>
-              <p><a href="https://www.linkedin.com/in/opentech221" target="_blank">opentech221</a></p>
-            </div>
-          </div>
+<body class="font-inter bg-gray-50 text-gray-900" data-active-page="contact">
+    <!-- Success/Error Messages -->
+    <div id="notification" class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 px-6 py-3 rounded-lg shadow-lg transition-all duration-300 opacity-0 pointer-events-none">
+        <div class="flex items-center space-x-2">
+            <i class="fas fa-check-circle text-green-500"></i>
+            <span class="text-sm font-medium">Message envoyé avec succès !</span>
         </div>
-
-        <div class="contact-form">
-          <h2>Envoyez-nous un message</h2>
-          <form id="contactForm">
-            <div class="form-group">
-              <label for="name">Nom complet</label>
-              <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-              <label for="subject">Sujet</label>
-              <input type="text" id="subject" name="subject" required>
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Envoyer le message</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <section class="expertise">
-      <h2>Nos Domaines d'Expertise</h2>
-      <div class="expertise-grid">
-        <div class="expertise-card">
-          <i class="fas fa-laptop-code"></i>
-          <h3>Développement Web</h3>
-          <p>Python (Flask, Django), JavaScript (Angular), Java (Spring)</p>
-        </div>
-        <div class="expertise-card">
-          <i class="fas fa-database"></i>
-          <h3>Bases de données</h3>
-          <p>MySQL, PostgreSQL, MongoDB</p>
-        </div>
-        <div class="expertise-card">
-          <i class="fas fa-cloud"></i>
-          <h3>DevOps</h3>
-          <p>Git, Docker, AWS</p>
-        </div>
-        <div class="expertise-card">
-          <i class="fas fa-link"></i>
-          <h3>Blockchain</h3>
-          <p>Bitcoin, Smart Contracts, Lightning Network</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- À placer avant le footer -->
-    <section class="partners">
-      <h2>Ils nous font confiance</h2>
-      <div class="partners-logos">
-        <img src="img/partenaire1.png" alt="Logo partenaire 1 - Association Jeunesse Active" title="Association Jeunesse Active">
-        <img src="img/partenaire2.png" alt="Logo partenaire 2" title="Partenaire 2">
-        <img src="img/partenaire3.png" alt="Logo partenaire 3" title="Partenaire 3">
-        <!-- Ajoutez d'autres logos -->
-      </div>
-    </section>
-
-    <section class="certifications">
-      <h2>Nos certifications & engagements</h2>
-      <div class="certifications-logos">
-        <img src="img/certif1.png" alt="Certification 1" title="Certification 1">
-        <img src="img/certif2.png" alt="Certification 2" title="Certification 2">
-        <!-- Ajoutez ici vos vraies certifications -->
-      </div>
-    </section>
-
-    <section class="team">
-      <h2>Notre équipe</h2>
-      <div class="team-grid">
-        <div class="team-member">
-          <img src="img/team1.jpg" alt="Cheikh Tidiane Samba BA">
-          <h3>Cheikh Tidiane Samba BA</h3>
-          <p>Fondateur & Directeur Technique</p>
-        </div>
-        <div class="team-member">
-          <img src="img/team2.jpg" alt="Nom Prénom">
-          <h3>Nom Prénom</h3>
-          <p>Responsable Projets</p>
-        </div>
-        <!-- Ajoutez d'autres membres -->
-      </div>
-
-    <section class="team">
-      <h2>Notre équipe</h2>
-      <div class="team-grid">
-        <div class="team-member">
-          <img src="img/team1.jpg" alt="Cheikh Tidiane Samba BA">
-          <h3>Cheikh Tidiane Samba BA</h3>
-          <p>Fondateur & Directeur Technique</p>
-        </div>
-        <div class="team-member">
-          <img src="img/team2.jpg" alt="Nom Prénom">
-          <h3>Nom Prénom</h3>
-          <p>Responsable Projets</p>
-        </div>
-        <!-- Ajoutez d'autres membres -->
-      </div>
-
-    <section class="faq">
-      <h2>Questions fréquentes</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <h3>Quels types de projets réalisez-vous ?</h3>
-          <p>Nous accompagnons les associations, ONG et institutions dans la digitalisation, le développement web/mobile, la gestion de projets et l’innovation sociale.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Comment débuter avec Opentech ?</h3>
-          <p>Contactez-nous via le formulaire ou par téléphone pour une première discussion gratuite sur vos besoins.</p>
-        </div>
-        <!-- Ajoutez d'autres questions/réponses -->
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>Opentech</h3>
-        <p>Votre partenaire de confiance pour la transformation numérique</p>
-      </div>
-      <div class="footer-section">
-        <h3>Contact</h3>
-        <p><i class="fas fa-envelope"></i> cheikhtidianesamba.ba@ucad.edu.sn</p>
-        <p><i class="fas fa-phone"></i> +221 70 609 83 43</p>
-      </div>
-      <div class="footer-section">
-        <h3>Suivez-nous</h3>
-        <div class="social-links">
-          <a href="https://linkedin.com/in/opentech221" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-          <a href="https://twitter.com/opentech221" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-          <a href="https://facebook.com/opentech221" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
-        </div>
-      </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 Opentech. Tous droits réservés. | <a href="mentions-legales.html">Mentions légales</a> | <a href="confidentialite.html">Politique de confidentialité</a></p>
-    </div>
-  </footer>
 
-  <script src="js/main.js"></script>
+    <!-- Navigation Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+  <!-- Main Content -->
+    <main class="pt-16 sm:pt-20 md:pt-24 pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-20">
+        <!-- Hero Section -->
+        <section class="relative pt-20 pb-16 bg-gradient-to-br from-primary-900 via-secondary-900 to-accent-900 overflow-hidden">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_40%_60%,rgba(34,197,94,0.1),transparent_50%)]"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_60%_40%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+            
+            <!-- Floating Elements -->
+            <div class="absolute top-20 left-10 w-20 h-20 bg-secondary-400/20 rounded-full animate-float"></div>
+            <div class="absolute top-40 right-20 w-16 h-16 bg-primary-400/20 rounded-full animate-float" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-32 left-1/4 w-12 h-12 bg-accent-400/20 rounded-full animate-float" style="animation-delay: 2s;"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-4xl mx-auto">
+                    <div class="inline-block animate-fade-in-up">
+                        <span class="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium mb-6">
+                            <i class="fas fa-comments mr-2"></i>
+                            Discutons de votre projet
+                        </span>
+                    </div>
+                    
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up animation-delay-200 text-white">
+                        Contactez <span class="bg-gradient-to-r from-secondary-400 via-primary-400 to-accent-400 bg-clip-text text-transparent">Notre Équipe</span>
+                    </h1>
+                    
+                    <p class="text-xl text-slate-300 mb-8 animate-fade-in-up animation-delay-400 max-w-3xl mx-auto">
+                        Prêt à transformer votre vision en réalité ? Notre équipe d'experts vous accompagne de l'idée à la mise en ligne. 
+                        Démarrez votre projet avec un devis gratuit et personnalisé.
+                    </p>
+
+                    <!-- Contact Methods -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 animate-fade-in-up animation-delay-600">
+                        <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-phone text-blue-600 text-xl"></i>
+                            </div>
+                            <h3 class="font-semibold mb-2">Appelez-nous</h3>
+                            <p class="text-gray-600 text-sm mb-3">Réponse rapide garantie</p>
+                            <a href="tel:+221706098343" class="text-blue-600 font-medium hover:text-blue-700 transition-colors duration-200">
+                                +221 70 609 83 43
+                            </a>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-envelope text-purple-600 text-xl"></i>
+                            </div>
+                            <h3 class="font-semibold mb-2">Écrivez-nous</h3>
+                            <p class="text-gray-600 text-sm mb-3">Réponse sous 24h</p>
+                            <a href="mailto:contact@opentech-solutions.fr" class="text-purple-600 font-medium hover:text-purple-700 transition-colors duration-200">
+                                contact@opentech-solutions.fr
+                            </a>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                <i class="fab fa-whatsapp text-green-600 text-xl"></i>
+                            </div>
+                            <h3 class="font-semibold mb-2">WhatsApp</h3>
+                            <p class="text-gray-600 text-sm mb-3">Discussion instantanée</p>
+                            <a href="https://wa.me/221706098343" class="text-green-600 font-medium hover:text-green-700 transition-colors duration-200" target="_blank" rel="noopener">
+                                Démarrer la conversation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    
+                    <!-- Contact Form -->
+                    <div class="bg-gray-50 p-8 rounded-2xl">
+                        <div class="mb-8">
+                            <h2 class="text-3xl font-bold mb-4">Envoyez-nous un message</h2>
+                            <p class="text-gray-600">
+                                Décrivez-nous votre projet et nous vous recontacterons dans les plus brefs délais avec une proposition personnalisée.
+                            </p>
+                        </div>
+
+                        <form id="contactForm" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="form-group">
+                                    <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Prénom *
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        id="firstName" 
+                                        name="firstName" 
+                                        required 
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                                        placeholder="Votre prénom"
+                                    >
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Nom *
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        id="lastName" 
+                                        name="lastName" 
+                                        required 
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                                        placeholder="Votre nom"
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="form-group">
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Email *
+                                    </label>
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        name="email" 
+                                        required 
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                                        placeholder="votre@email.com"
+                                    >
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Téléphone
+                                    </label>
+                                    <input 
+                                        type="tel" 
+                                        id="phone" 
+                                        name="phone" 
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                                        placeholder="+33 1 23 45 67 89"
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="company" class="block text-sm font-medium text-gray-700 mb-2">
+                                    Entreprise/Organisation
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="company" 
+                                    name="company" 
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                                    placeholder="Nom de votre entreprise"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="projectType" class="block text-sm font-medium text-gray-700 mb-2">
+                                    Type de projet *
+                                </label>
+                                <select 
+                                    id="projectType" 
+                                    name="projectType" 
+                                    required 
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                                >
+                                    <option value="">Sélectionnez un type de projet</option>
+                                    <option value="site-web">Site web vitrine</option>
+                                    <option value="ecommerce">Site e-commerce</option>
+                                    <option value="application-web">Application web</option>
+                                    <option value="application-mobile">Application mobile</option>
+                                    <option value="saas">Solution SaaS</option>
+                                    <option value="refonte">Refonte de site existant</option>
+                                    <option value="maintenance">Maintenance/Support</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="budget" class="block text-sm font-medium text-gray-700 mb-2">
+                                    Budget estimé
+                                </label>
+                                <select 
+                                    id="budget" 
+                                    name="budget" 
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                                >
+                                    <option value="">Sélectionnez votre budget</option>
+                                    <option value="moins-5k">Moins de 5 000€</option>
+                                    <option value="5k-15k">5 000€ - 15 000€</option>
+                                    <option value="15k-30k">15 000€ - 30 000€</option>
+                                    <option value="30k-50k">30 000€ - 50 000€</option>
+                                    <option value="plus-50k">Plus de 50 000€</option>
+                                    <option value="a-discuter">À discuter</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="timeline" class="block text-sm font-medium text-gray-700 mb-2">
+                                    Délai souhaité
+                                </label>
+                                <select 
+                                    id="timeline" 
+                                    name="timeline" 
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                                >
+                                    <option value="">Sélectionnez un délai</option>
+                                    <option value="urgent">Urgent (moins de 1 mois)</option>
+                                    <option value="1-3-mois">1 à 3 mois</option>
+                                    <option value="3-6-mois">3 à 6 mois</option>
+                                    <option value="6-12-mois">6 à 12 mois</option>
+                                    <option value="flexible">Flexible</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+                                    Décrivez votre projet *
+                                </label>
+                                <textarea 
+                                    id="message" 
+                                    name="message" 
+                                    rows="6" 
+                                    required 
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-none"
+                                    placeholder="Décrivez votre projet, vos objectifs, fonctionnalités souhaitées, contraintes particulières..."
+                                ></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="flex items-start space-x-3">
+                                    <input 
+                                        type="checkbox" 
+                                        id="privacy" 
+                                        name="privacy" 
+                                        required 
+                                        class="mt-1 rounded border-gray-300 text-blue-600 focus:ring-blue-500 focus:ring-2"
+                                    >
+                                    <span class="text-sm text-gray-600">
+                                        J'accepte la <a href="#" class="text-blue-600 hover:text-blue-700 underline">politique de confidentialité</a> 
+                                        et consens au traitement de mes données personnelles pour le traitement de cette demande. *
+                                    </span>
+                                </label>
+                            </div>
+
+                            <button 
+                                type="submit" 
+                                class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-6 rounded-lg font-semibold hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                                id="submitBtn"
+                            >
+                                <span class="flex items-center justify-center">
+                                    <i class="fas fa-paper-plane mr-2"></i>
+                                    Envoyer ma demande
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="space-y-8">
+                        <div>
+                            <h2 class="text-3xl font-bold mb-6">Informations de contact</h2>
+                            <p class="text-gray-600 mb-8">
+                                Notre équipe est disponible pour répondre à toutes vos questions et vous accompagner dans votre projet digital.
+                            </p>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-blue-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold mb-1">Adresse</h3>
+                                    <p class="text-gray-600">
+                                        Dakar, Sénégal<br>
+                                        Disponible dans toute l'Afrique de l'Ouest
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-purple-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold mb-1">Email</h3>
+                                    <a href="mailto:cheikhtidianesamba.ba@ucad.edu.sn" class="text-purple-600 hover:text-purple-700 transition-colors duration-200">
+                                        cheikhtidianesamba.ba@ucad.edu.sn
+                                    </a>
+                                    <p class="text-gray-600 text-sm mt-1">Réponse sous 24h</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-green-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold mb-1">Téléphone</h3>
+                                    <a href="tel:+221706098343" class="text-green-600 hover:text-green-700 transition-colors duration-200">
+                                        +221 70 609 83 43
+                                    </a>
+                                    <p class="text-gray-600 text-sm mt-1">Lun-Ven: 9h-18h</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fab fa-linkedin text-indigo-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold mb-1">LinkedIn</h3>
+                                    <a href="https://www.linkedin.com/in/opentech221" target="_blank" rel="noopener" class="text-indigo-600 hover:text-indigo-700 transition-colors duration-200">
+                                        linkedin.com/in/opentech221
+                                    </a>
+                                    <p class="text-gray-600 text-sm mt-1">Suivez nos actualités</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Business Hours -->
+                        <div class="bg-gray-50 p-6 rounded-xl">
+                            <h3 class="font-semibold mb-4 flex items-center">
+                                <i class="fas fa-clock text-blue-600 mr-2"></i>
+                                Horaires d'ouverture
+                            </h3>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Lundi - Vendredi</span>
+                                    <span class="font-medium">9h00 - 18h00</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Samedi</span>
+                                    <span class="font-medium">10h00 - 16h00</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Dimanche</span>
+                                    <span class="text-red-600">Fermé</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Media -->
+                        <div>
+                            <h3 class="font-semibold mb-4">Suivez-nous</h3>
+                            <div class="flex space-x-4">
+                                <a href="https://linkedin.com/in/opentech221" target="_blank" rel="noopener" class="w-12 h-12 bg-blue-600 text-white rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors duration-200">
+                                    <i class="fab fa-linkedin text-lg"></i>
+                                </a>
+                                <a href="https://twitter.com/opentech221" target="_blank" rel="noopener" class="w-12 h-12 bg-blue-400 text-white rounded-lg flex items-center justify-center hover:bg-blue-500 transition-colors duration-200">
+                                    <i class="fab fa-twitter text-lg"></i>
+                                </a>
+                                <a href="https://github.com/opentech221" target="_blank" rel="noopener" class="w-12 h-12 bg-gray-800 text-white rounded-lg flex items-center justify-center hover:bg-gray-900 transition-colors duration-200">
+                                    <i class="fab fa-github text-lg"></i>
+                                </a>
+                                <a href="https://facebook.com/opentech221" target="_blank" rel="noopener" class="w-12 h-12 bg-blue-700 text-white rounded-lg flex items-center justify-center hover:bg-blue-800 transition-colors duration-200">
+                                    <i class="fab fa-facebook text-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                        Questions <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Fréquentes</span>
+                    </h2>
+                    <p class="text-xl text-gray-600">
+                        Trouvez rapidement les réponses à vos questions les plus courantes
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="faq-item bg-white rounded-xl shadow-sm">
+                        <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200">
+                            <span class="font-semibold">Combien de temps faut-il pour développer une application web ?</span>
+                            <i class="fas fa-chevron-down text-gray-400 transform transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-4 text-gray-600 hidden">
+                            Le délai varie selon la complexité du projet. Un site vitrine simple : 2-4 semaines, 
+                            une application web complexe : 3-6 mois. Nous vous fournirons un planning détaillé après analyse de vos besoins.
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white rounded-xl shadow-sm">
+                        <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200">
+                            <span class="font-semibold">Proposez-vous un devis gratuit ?</span>
+                            <i class="fas fa-chevron-down text-gray-400 transform transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-4 text-gray-600 hidden">
+                            Oui, nous proposons un devis gratuit et sans engagement. Après une première discussion pour comprendre vos besoins, 
+                            nous vous envoyons une proposition détaillée sous 48h.
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white rounded-xl shadow-sm">
+                        <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200">
+                            <span class="font-semibold">Quelles technologies utilisez-vous ?</span>
+                            <i class="fas fa-chevron-down text-gray-400 transform transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-4 text-gray-600 hidden">
+                            Nous maîtrisons les technologies modernes : React, Vue.js, Angular, Node.js, Python, PHP, 
+                            bases de données SQL/NoSQL, cloud AWS/Azure, et bien d'autres selon vos besoins spécifiques.
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white rounded-xl shadow-sm">
+                        <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200">
+                            <span class="font-semibold">Assurez-vous la maintenance après livraison ?</span>
+                            <i class="fas fa-chevron-down text-gray-400 transform transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-4 text-gray-600 hidden">
+                            Oui, nous proposons différents plans de maintenance : corrections de bugs, mises à jour de sécurité, 
+                            évolutions fonctionnelles, et support technique. La maintenance est incluse 3 mois après livraison.
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white rounded-xl shadow-sm">
+                        <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200">
+                            <span class="font-semibold">Travaillez-vous avec des clients internationaux ?</span>
+                            <i class="fas fa-chevron-down text-gray-400 transform transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-4 text-gray-600 hidden">
+                            Absolument ! Nous travaillons avec des clients dans le monde entier. Nos équipes sont habituées 
+                            au travail à distance et nous nous adaptons à vos fuseaux horaires pour une collaboration optimale.
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white rounded-xl shadow-sm">
+                        <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200">
+                            <span class="font-semibold">Comment suivre l'avancement de mon projet ?</span>
+                            <i class="fas fa-chevron-down text-gray-400 transform transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-4 text-gray-600 hidden">
+                            Nous utilisons des outils de gestion de projet collaboratifs. Vous avez accès en temps réel à l'avancement, 
+                            aux livrables, et nous organisons des points réguliers pour valider chaque étape ensemble.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-purple-700 text-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                    Prêt à démarrer votre projet ?
+                </h2>
+                <p class="text-xl mb-8 opacity-90">
+                    Contactez-nous dès maintenant pour un devis gratuit et personnalisé
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#contactForm" class="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transform hover:scale-105 transition-all duration-200 inline-flex items-center justify-center">
+                        <i class="fas fa-edit mr-2"></i>
+                        Remplir le formulaire
+                    </a>
+                    <a href="tel:+221706098343" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-600 transform hover:scale-105 transition-all duration-200 inline-flex items-center justify-center">
+                        <i class="fas fa-phone mr-2"></i>
+                        Appeler maintenant
+                    </a>
+                </div>
+            </div>
+        </section>
+    <main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-code text-white text-lg"></i>
+                        </div>
+                        <span class="text-2xl font-bold">Opentech</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        Votre partenaire de confiance pour tous vos projets digitaux. 
+                        De l'idée à la réalisation, nous transformons vos ambitions en solutions innovantes.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://linkedin.com/in/opentech221" target="_blank" rel="noopener" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-200">
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                        <a href="https://twitter.com/opentech221" target="_blank" rel="noopener" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-400 transition-colors duration-200">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="https://github.com/opentech221" target="_blank" rel="noopener" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors duration-200">
+                            <i class="fab fa-github text-lg"></i>
+                        </a>
+                        <a href="https://facebook.com/opentech221" target="_blank" rel="noopener" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-200">
+                            <i class="fab fa-facebook text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Liens rapides</h3>
+                    <ul class="space-y-4">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-200">Accueil</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors duration-200">À propos</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors duration-200">Services</a></li>
+                        <li><a href="projects.html" class="text-gray-400 hover:text-white transition-colors duration-200">Projets</a></li>
+                        <li><a href="contact.html" class="text-blue-400 font-medium">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Contact</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope mr-3 text-blue-400"></i>
+                            cheikhtidianesamba.ba@ucad.edu.sn
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-phone mr-3 text-blue-400"></i>
+                            +221 70 609 83 43
+                        </li>
+                        <li class="flex items-start text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-3 text-blue-400 mt-1"></i>
+                            <span>Dakar, Sénégal</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">
+                    © 2024 Opentech Solutions. Tous droits réservés.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors duration-200">Politique de confidentialité</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors duration-200">Mentions légales</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors duration-200">CGV</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-200 opacity-0 pointer-events-none">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/modern.js"></script>
+    
+    <!-- Contact Form Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const notification = document.getElementById('notification');
+
+            // FAQ Toggle
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const icon = question.querySelector('i');
+
+                question.addEventListener('click', () => {
+                    const isOpen = !answer.classList.contains('hidden');
+                    
+                    // Close all FAQ items
+                    faqItems.forEach(otherItem => {
+                        const otherAnswer = otherItem.querySelector('.faq-answer');
+                        const otherIcon = otherItem.querySelector('.faq-question i');
+                        otherAnswer.classList.add('hidden');
+                        otherIcon.classList.remove('rotate-180');
+                    });
+
+                    // Toggle current item
+                    if (!isOpen) {
+                        answer.classList.remove('hidden');
+                        icon.classList.add('rotate-180');
+                    }
+                });
+            });
+
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Disable submit button
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Envoi en cours...';
+                
+                // Simulate form submission
+                setTimeout(() => {
+                    // Show success notification
+                    notification.classList.remove('opacity-0', 'pointer-events-none');
+                    notification.classList.add('bg-green-100', 'text-green-800');
+                    notification.innerHTML = `
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-sm font-medium">Message envoyé avec succès ! Nous vous recontacterons rapidement.</span>
+                        </div>
+                    `;
+                    
+                    // Reset form
+                    form.reset();
+                    
+                    // Re-enable submit button
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i>Envoyer ma demande';
+                    
+                    // Hide notification after 5 seconds
+                    setTimeout(() => {
+                        notification.classList.add('opacity-0', 'pointer-events-none');
+                    }, 5000);
+                    
+                }, 2000);
+            });
+
+            // Form validation
+            const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+            inputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    if (this.value.trim() === '') {
+                        this.classList.add('border-red-300');
+                        this.classList.remove('border-gray-300');
+                    } else {
+                        this.classList.remove('border-red-300');
+                        this.classList.add('border-gray-300');
+                    }
+                });
+            });
+
+            // Email validation
+            const emailInput = document.getElementById('email');
+            emailInput.addEventListener('blur', function() {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (this.value && !emailRegex.test(this.value)) {
+                    this.classList.add('border-red-300');
+                    this.classList.remove('border-gray-300');
+                } else if (this.value) {
+                    this.classList.remove('border-red-300');
+                    this.classList.add('border-gray-300');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

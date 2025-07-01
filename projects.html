@@ -1,273 +1,807 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Opentech - Réalisations</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Projets - Opentech Solutions</title>
+    <meta name="description" content="Découvrez nos projets réalisés et notre expertise en développement web, applications mobiles et solutions digitales sur mesure.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'inter': ['Inter', 'sans-serif'],
+              'poppins': ['Poppins', 'sans-serif'],
+            },
+            colors: {
+              'primary': {
+                50: '#f0f9ff',
+                100: '#e0f2fe',
+                200: '#bae6fd',
+                300: '#7dd3fc',
+                400: '#38bdf8',
+                500: '#0ea5e9',
+                600: '#0284c7',
+                700: '#0369a1',
+                800: '#075985',
+                900: '#0c4a6e'
+              },
+              'secondary': {
+                50: '#f0fdf4',
+                100: '#dcfce7',
+                200: '#bbf7d0',
+                300: '#86efac',
+                400: '#4ade80',
+                500: '#22c55e',
+                600: '#16a34a',
+                700: '#15803d',
+                800: '#166534',
+                900: '#14532d'
+              },
+              'accent': {
+                50: '#fff5f5',
+                100: '#fed7d7',
+                200: '#feb2b2',
+                300: '#fc8181',
+                400: '#f56565',
+                500: '#e53e3e',
+                600: '#c53030',
+                700: '#9b2c2c',
+                800: '#822727',
+                900: '#63171b'
+              }
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/modern-style.css">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Nos Projets - Opentech Solutions",
+        "description": "Portfolio de nos réalisations en développement web et mobile",
+        "url": "https://opentech-solutions.fr/projects.html"
+    }
+    </script>
+  
+  <!-- Navigation Loader -->
+  <script src="js/navbar-loader.js"></script>
 </head>
-<body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">Opentech</div>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <ul class="nav-menu">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="about.html">À propos</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="projects.html" class="active">Réalisations</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section class="projects-hero">
-      <h1>Nos Réalisations</h1>
-      <p>Découvrez comment nous accompagnons les organisations dans leur transformation numérique pour un impact social positif.</p>
-    </section>
+<body class="font-inter bg-gray-50 text-gray-900" data-active-page="projects">
+    <!-- Navigation Placeholder -->
+    <div id="navbar-placeholder"></div>
 
-    <section class="projects-categories">
-      <div class="category">
-        <h2>Projets Associatifs</h2>
-        <div class="project-grid">
-          <div class="project-card">
-            <div class="project-content">
-              <h3>Plateforme Jeunesse Active</h3>
-              <p class="project-description">Création d'une plateforme digitale pour l'association Jeunesse Active, permettant la gestion des activités, le suivi des membres et la communication avec les bénéficiaires.</p>
-              <div class="project-impact">
-                <h4>Impact</h4>
-                <ul>
-                  <li>+200 jeunes formés aux outils numériques</li>
-                  <li>Amélioration de 60% de la gestion des activités</li>
-                  <li>Augmentation de 40% de l'engagement communautaire</li>
-                </ul>
-              </div>
-              <div class="project-tech">
-                <span>Technologies :</span>
-                <ul>
-                  <li>Python/Django</li>
-                  <li>React</li>
-                  <li>PostgreSQL</li>
-                </ul>
-              </div>
+  <!-- Main Content -->
+    <main class="pt-16 sm:pt-20 md:pt-24 pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-20">
+        <!-- Hero Section -->
+        <section class="relative pt-20 pb-16 bg-gradient-to-br from-primary-900 via-accent-900 to-secondary-900 overflow-hidden">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(239,68,68,0.1),transparent_50%)]"></div>
+            
+            <!-- Floating Elements -->
+            <div class="absolute top-20 left-10 w-20 h-20 bg-primary-400/20 rounded-full animate-float"></div>
+            <div class="absolute top-40 right-20 w-16 h-16 bg-accent-400/20 rounded-full animate-float" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-32 left-1/4 w-12 h-12 bg-secondary-400/20 rounded-full animate-float" style="animation-delay: 2s;"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-4xl mx-auto">
+                    <div class="inline-block animate-fade-in-up">
+                        <span class="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium mb-6">
+                            <i class="fas fa-rocket mr-2"></i>
+                            Portfolio & Réalisations
+                        </span>
+                    </div>
+                    
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up animation-delay-200 text-white">
+                        Nos <span class="bg-gradient-to-r from-primary-400 via-accent-400 to-secondary-400 bg-clip-text text-transparent">Projets</span>
+                    </h1>
+                    
+                    <p class="text-xl text-slate-300 mb-8 animate-fade-in-up animation-delay-400 max-w-3xl mx-auto">
+                        Découvrez notre expertise à travers une sélection de projets réalisés. 
+                        De l'application web à la solution mobile, chaque projet reflète notre engagement envers l'excellence et l'innovation.
+                    </p>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12 animate-fade-in-up animation-delay-600">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600 mb-2">50+</div>
+                            <div class="text-gray-600">Projets réalisés</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-purple-600 mb-2">95%</div>
+                            <div class="text-gray-600">Satisfaction client</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-600 mb-2">3M+</div>
+                            <div class="text-gray-600">Utilisateurs touchés</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-orange-600 mb-2">24/7</div>
+                            <div class="text-gray-600">Support technique</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+        </section>
 
-          <div class="project-card">
-            <div class="project-content">
-              <h3>Espace Digital Femmes</h3>
-              <p class="project-description">Développement d'un espace numérique dédié aux femmes entrepreneures, avec des ressources de formation et un réseau de mentorat.</p>
-              <div class="project-impact">
-                <h4>Impact</h4>
-                <ul>
-                  <li>150 femmes formées au digital</li>
-                  <li>Création de 30 micro-entreprises</li>
-                  <li>Réseau de 50 mentors</li>
-                </ul>
-              </div>
-              <div class="project-tech">
-                <span>Technologies :</span>
-                <ul>
-                  <li>Angular</li>
-                  <li>Node.js</li>
-                  <li>MongoDB</li>
-                </ul>
-              </div>
+        <!-- Portfolio Filter -->
+        <section class="py-8 bg-white border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button class="portfolio-filter active px-6 py-2 rounded-full bg-blue-600 text-white font-medium transition-all duration-200" data-filter="all">
+                        Tous les projets
+                    </button>
+                    <button class="portfolio-filter px-6 py-2 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 font-medium transition-all duration-200" data-filter="web">
+                        Applications Web
+                    </button>
+                    <button class="portfolio-filter px-6 py-2 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 font-medium transition-all duration-200" data-filter="mobile">
+                        Applications Mobile
+                    </button>
+                    <button class="portfolio-filter px-6 py-2 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 font-medium transition-all duration-200" data-filter="ecommerce">
+                        E-commerce
+                    </button>
+                    <button class="portfolio-filter px-6 py-2 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 font-medium transition-all duration-200" data-filter="saas">
+                        SaaS
+                    </button>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
+        </section>
 
-      <div class="category">
-        <h2>Projets Institutionnels</h2>
-        <div class="project-grid">
-          <div class="project-card">
-            <div class="project-content">
-              <h3>Plateforme de Suivi des Projets</h3>
-              <p class="project-description">Système de gestion et de suivi des projets pour une ONG internationale, permettant le monitoring en temps réel des activités sur le terrain.</p>
-              <div class="project-impact">
-                <h4>Impact</h4>
-                <ul>
-                  <li>Suivi de 50+ projets simultanément</li>
-                  <li>Réduction de 45% des délais de reporting</li>
-                  <li>Amélioration de la transparence des actions</li>
-                </ul>
-              </div>
-              <div class="project-tech">
-                <span>Technologies :</span>
-                <ul>
-                  <li>Java/Spring Boot</li>
-                  <li>Vue.js</li>
-                  <li>MySQL</li>
-                </ul>
-              </div>
+        <!-- Portfolio Grid -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+                    
+                    <!-- Projet 1 - E-commerce -->
+                    <div class="portfolio-item bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:scale-105" data-category="ecommerce web">
+                        <div class="relative overflow-hidden group">
+                            <div class="h-64 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
+                                <i class="fas fa-shopping-cart text-6xl text-white opacity-80"></i>
+                            </div>
+                            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div class="flex space-x-4">
+                                    <button class="bg-white text-gray-900 p-3 rounded-full hover:bg-gray-100 transition-colors duration-200">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition-colors duration-200">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-sm font-medium">E-commerce</span>
+                                <div class="flex items-center text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <span class="ml-1 text-gray-600 text-sm">4.9</span>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">MarketPlace Pro</h3>
+                            <p class="text-gray-600 mb-4">Plateforme e-commerce complète avec gestion multi-vendeurs, paiements sécurisés et analytics avancés.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">React</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Node.js</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">MongoDB</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Stripe</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="text-sm text-gray-500">
+                                    <i class="fas fa-calendar mr-1"></i>
+                                    Mars 2024
+                                </div>
+                                <div class="text-sm text-green-600 font-medium">
+                                    <i class="fas fa-chart-line mr-1"></i>
+                                    +250% ventes
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 2 - SaaS -->
+                    <div class="portfolio-item bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:scale-105" data-category="saas web">
+                        <div class="relative overflow-hidden group">
+                            <div class="h-64 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
+                                <i class="fas fa-chart-bar text-6xl text-white opacity-80"></i>
+                            </div>
+                            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div class="flex space-x-4">
+                                    <button class="bg-white text-gray-900 p-3 rounded-full hover:bg-gray-100 transition-colors duration-200">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition-colors duration-200">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="inline-block px-3 py-1 rounded-full bg-green-100 text-green-800 text-sm font-medium">SaaS</span>
+                                <div class="flex items-center text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <span class="ml-1 text-gray-600 text-sm">4.8</span>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Analytics Dashboard</h3>
+                            <p class="text-gray-600 mb-4">Solution SaaS complète pour l'analyse de données avec tableaux de bord interactifs et rapports automatisés.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Vue.js</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Python</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">PostgreSQL</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Docker</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="text-sm text-gray-500">
+                                    <i class="fas fa-calendar mr-1"></i>
+                                    Février 2024
+                                </div>
+                                <div class="text-sm text-green-600 font-medium">
+                                    <i class="fas fa-users mr-1"></i>
+                                    1000+ utilisateurs
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 3 - Mobile -->
+                    <div class="portfolio-item bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:scale-105" data-category="mobile">
+                        <div class="relative overflow-hidden group">
+                            <div class="h-64 bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center">
+                                <i class="fas fa-mobile-alt text-6xl text-white opacity-80"></i>
+                            </div>
+                            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div class="flex space-x-4">
+                                    <button class="bg-white text-gray-900 p-3 rounded-full hover:bg-gray-100 transition-colors duration-200">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition-colors duration-200">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="inline-block px-3 py-1 rounded-full bg-purple-100 text-purple-800 text-sm font-medium">Mobile</span>
+                                <div class="flex items-center text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <span class="ml-1 text-gray-600 text-sm">4.7</span>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">HealthTracker App</h3>
+                            <p class="text-gray-600 mb-4">Application mobile de suivi de santé avec synchronisation cloud et notifications intelligentes.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">React Native</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Firebase</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Redux</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Push Notifications</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="text-sm text-gray-500">
+                                    <i class="fas fa-calendar mr-1"></i>
+                                    Janvier 2024
+                                </div>
+                                <div class="text-sm text-green-600 font-medium">
+                                    <i class="fas fa-download mr-1"></i>
+                                    50K+ téléchargements
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 4 - Web App -->
+                    <div class="portfolio-item bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:scale-105" data-category="web">
+                        <div class="relative overflow-hidden group">
+                            <div class="h-64 bg-gradient-to-br from-indigo-400 to-cyan-500 flex items-center justify-center">
+                                <i class="fas fa-globe text-6xl text-white opacity-80"></i>
+                            </div>
+                            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div class="flex space-x-4">
+                                    <button class="bg-white text-gray-900 p-3 rounded-full hover:bg-gray-100 transition-colors duration-200">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition-colors duration-200">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="inline-block px-3 py-1 rounded-full bg-indigo-100 text-indigo-800 text-sm font-medium">Web App</span>
+                                <div class="flex items-center text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <span class="ml-1 text-gray-600 text-sm">4.9</span>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">EduPlatform</h3>
+                            <p class="text-gray-600 mb-4">Plateforme éducative interactive avec cours en ligne, évaluations et suivi des progrès en temps réel.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Next.js</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">TypeScript</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Prisma</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">WebRTC</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="text-sm text-gray-500">
+                                    <i class="fas fa-calendar mr-1"></i>
+                                    Décembre 2023
+                                </div>
+                                <div class="text-sm text-green-600 font-medium">
+                                    <i class="fas fa-graduation-cap mr-1"></i>
+                                    5000+ étudiants
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 5 - E-commerce -->
+                    <div class="portfolio-item bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:scale-105" data-category="ecommerce web">
+                        <div class="relative overflow-hidden group">
+                            <div class="h-64 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
+                                <i class="fas fa-store text-6xl text-white opacity-80"></i>
+                            </div>
+                            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div class="flex space-x-4">
+                                    <button class="bg-white text-gray-900 p-3 rounded-full hover:bg-gray-100 transition-colors duration-200">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition-colors duration-200">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="inline-block px-3 py-1 rounded-full bg-orange-100 text-orange-800 text-sm font-medium">E-commerce</span>
+                                <div class="flex items-center text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <span class="ml-1 text-gray-600 text-sm">4.8</span>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">FashionHub</h3>
+                            <p class="text-gray-600 mb-4">Boutique en ligne de mode avec réalité augmentée, recommandations IA et expérience d'achat immersive.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Angular</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">ASP.NET</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">SQL Server</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">AR/VR</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="text-sm text-gray-500">
+                                    <i class="fas fa-calendar mr-1"></i>
+                                    Novembre 2023
+                                </div>
+                                <div class="text-sm text-green-600 font-medium">
+                                    <i class="fas fa-euro-sign mr-1"></i>
+                                    2M€ CA/an
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 6 - Mobile -->
+                    <div class="portfolio-item bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:scale-105" data-category="mobile">
+                        <div class="relative overflow-hidden group">
+                            <div class="h-64 bg-gradient-to-br from-teal-400 to-green-500 flex items-center justify-center">
+                                <i class="fas fa-leaf text-6xl text-white opacity-80"></i>
+                            </div>
+                            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div class="flex space-x-4">
+                                    <button class="bg-white text-gray-900 p-3 rounded-full hover:bg-gray-100 transition-colors duration-200">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition-colors duration-200">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="inline-block px-3 py-1 rounded-full bg-teal-100 text-teal-800 text-sm font-medium">Mobile</span>
+                                <div class="flex items-center text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <span class="ml-1 text-gray-600 text-sm">4.6</span>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">EcoTracker</h3>
+                            <p class="text-gray-600 mb-4">Application de suivi écologique avec gamification, défis communautaires et impact environnemental.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Flutter</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Dart</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Firebase</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Maps API</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="text-sm text-gray-500">
+                                    <i class="fas fa-calendar mr-1"></i>
+                                    Octobre 2023
+                                </div>
+                                <div class="text-sm text-green-600 font-medium">
+                                    <i class="fas fa-tree mr-1"></i>
+                                    10K arbres plantés
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Load More Button -->
+                <div class="text-center mt-12">
+                    <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-200 font-medium">
+                        <i class="fas fa-plus mr-2"></i>
+                        Voir plus de projets
+                    </button>
+                </div>
             </div>
-          </div>
+        </section>
 
-          <div class="project-card">
-            <div class="project-content">
-              <h3>Application Mobile Communautaire</h3>
-              <p class="project-description">Application mobile pour faciliter la communication entre les communautés rurales et les services publics.</p>
-              <div class="project-impact">
-                <h4>Impact</h4>
-                <ul>
-                  <li>10 000+ utilisateurs actifs</li>
-                  <li>Amélioration de l'accès aux services</li>
-                  <li>Renforcement du lien social</li>
-                </ul>
-              </div>
-              <div class="project-tech">
-                <span>Technologies :</span>
-                <ul>
-                  <li>Flutter</li>
-                  <li>Firebase</li>
-                  <li>Google Maps API</li>
-                </ul>
-              </div>
+        <!-- Process Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                        Notre <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Processus</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Une méthode éprouvée pour transformer vos idées en solutions digitales performantes
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center group">
+                        <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-lightbulb text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">1. Analyse</h3>
+                        <p class="text-gray-600">Compréhension approfondie de vos besoins et objectifs métier</p>
+                    </div>
+                    
+                    <div class="text-center group">
+                        <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-pencil-ruler text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">2. Design</h3>
+                        <p class="text-gray-600">Conception d'interfaces intuitives et d'expériences utilisateur optimales</p>
+                    </div>
+                    
+                    <div class="text-center group">
+                        <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-code text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">3. Développement</h3>
+                        <p class="text-gray-600">Implémentation avec les meilleures technologies et pratiques du marché</p>
+                    </div>
+                    
+                    <div class="text-center group">
+                        <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-rocket text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">4. Déploiement</h3>
+                        <p class="text-gray-600">Mise en ligne sécurisée et accompagnement pour une adoption réussie</p>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
+        </section>
 
-      <div class="category">
-        <h2>Innovation Sociale</h2>
-        <div class="project-grid">
-          <div class="project-card">
-            <div class="project-content">
-              <h3>Plateforme de Microfinance</h3>
-              <p class="project-description">Système de gestion de microcrédits pour les entrepreneurs locaux, avec suivi des prêts et formation financière.</p>
-              <div class="project-impact">
-                <h4>Impact</h4>
-                <ul>
-                  <li>500+ micro-entreprises financées</li>
-                  <li>Taux de remboursement de 95%</li>
-                  <li>Création de 1000+ emplois</li>
-                </ul>
-              </div>
-              <div class="project-tech">
-                <span>Technologies :</span>
-                <ul>
-                  <li>Python/Flask</li>
-                  <li>React Native</li>
-                  <li>PostgreSQL</li>
-                </ul>
-              </div>
+        <!-- Technologies Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                        Technologies <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Maîtrisées</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Nous utilisons les dernières technologies pour créer des solutions robustes et évolutives
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 text-center group">
+                        <i class="fab fa-react text-4xl text-blue-500 mb-3 group-hover:scale-110 transition-transform duration-300"></i>
+                        <h3 class="font-semibold text-gray-900">React</h3>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 text-center group">
+                        <i class="fab fa-vue text-4xl text-green-500 mb-3 group-hover:scale-110 transition-transform duration-300"></i>
+                        <h3 class="font-semibold text-gray-900">Vue.js</h3>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 text-center group">
+                        <i class="fab fa-angular text-4xl text-red-500 mb-3 group-hover:scale-110 transition-transform duration-300"></i>
+                        <h3 class="font-semibold text-gray-900">Angular</h3>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 text-center group">
+                        <i class="fab fa-node-js text-4xl text-green-600 mb-3 group-hover:scale-110 transition-transform duration-300"></i>
+                        <h3 class="font-semibold text-gray-900">Node.js</h3>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 text-center group">
+                        <i class="fab fa-python text-4xl text-blue-600 mb-3 group-hover:scale-110 transition-transform duration-300"></i>
+                        <h3 class="font-semibold text-gray-900">Python</h3>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 text-center group">
+                        <i class="fab fa-docker text-4xl text-blue-400 mb-3 group-hover:scale-110 transition-transform duration-300"></i>
+                        <h3 class="font-semibold text-gray-900">Docker</h3>
+                    </div>
+                </div>
             </div>
-          </div>
+        </section>
 
-          <div class="project-card">
-            <div class="project-content">
-              <h3>Éducation Numérique</h3>
-              <p class="project-description">Plateforme d'apprentissage en ligne pour les écoles rurales, avec contenu adapté et suivi personnalisé.</p>
-              <div class="project-impact">
-                <h4>Impact</h4>
-                <ul>
-                  <li>20 écoles connectées</li>
-                  <li>1000+ élèves bénéficiaires</li>
-                  <li>Amélioration des résultats scolaires</li>
-                </ul>
-              </div>
-              <div class="project-tech">
-                <span>Technologies :</span>
-                <ul>
-                  <li>Laravel</li>
-                  <li>Vue.js</li>
-                  <li>MySQL</li>
-                </ul>
-              </div>
+        <!-- Testimonials Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                        Ce que disent nos <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Clients</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        La satisfaction de nos clients est notre plus belle récompense
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-8 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400 mr-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm">(5.0)</span>
+                        </div>
+                        <p class="text-gray-700 mb-6 italic">
+                            "Opentech a transformé notre vision en une application exceptionnelle. Leur expertise technique et leur approche collaborative ont dépassé nos attentes."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white font-bold">MR</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Marie Rousseau</h4>
+                                <p class="text-gray-600 text-sm">CEO, TechStart</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-8 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400 mr-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm">(5.0)</span>
+                        </div>
+                        <p class="text-gray-700 mb-6 italic">
+                            "Un partenaire fiable avec une équipe réactive. Notre plateforme e-commerce a vu ses ventes augmenter de 300% depuis le lancement."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white font-bold">PD</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Pierre Dubois</h4>
+                                <p class="text-gray-600 text-sm">Fondateur, ShopInnovant</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-8 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400 mr-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm">(5.0)</span>
+                        </div>
+                        <p class="text-gray-700 mb-6 italic">
+                            "Professionnalisme et innovation au rendez-vous. Notre application mobile a été développée dans les délais avec une qualité irréprochable."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white font-bold">SL</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Sophie Laurent</h4>
+                                <p class="text-gray-600 text-sm">Directrice, InnoHealth</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-purple-700 text-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                    Prêt à transformer votre idée en réalité ?
+                </h2>
+                <p class="text-xl mb-8 opacity-90">
+                    Rejoignez les entreprises qui nous font confiance pour leurs projets digitaux
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html" class="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transform hover:scale-105 transition-all duration-200 inline-flex items-center justify-center">
+                        <i class="fas fa-rocket mr-2"></i>
+                        Démarrer un projet
+                    </a>
+                    <a href="#portfolio-grid" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-600 transform hover:scale-105 transition-all duration-200 inline-flex items-center justify-center">
+                        <i class="fas fa-eye mr-2"></i>
+                        Voir notre portfolio
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-code text-white text-lg"></i>
+                        </div>
+                        <span class="text-2xl font-bold">Opentech</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        Votre partenaire de confiance pour tous vos projets digitaux. 
+                        De l'idée à la réalisation, nous transformons vos ambitions en solutions innovantes.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-200">
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-400 transition-colors duration-200">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors duration-200">
+                            <i class="fab fa-github text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-600 transition-colors duration-200">
+                            <i class="fab fa-dribbble text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Liens rapides</h3>
+                    <ul class="space-y-4">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-200">Accueil</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors duration-200">À propos</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors duration-200">Services</a></li>
+                        <li><a href="projects.html" class="text-blue-400 font-medium">Projets</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors duration-200">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Contact</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope mr-3 text-blue-400"></i>
+                            contact@opentech-solutions.fr
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-phone mr-3 text-blue-400"></i>
+                            +33 1 23 45 67 89
+                        </li>
+                        <li class="flex items-start text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-3 text-blue-400 mt-1"></i>
+                            <span>123 Avenue des Champs-Élysées<br>75008 Paris, France</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">
+                    © 2024 Opentech Solutions. Tous droits réservés.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors duration-200">Politique de confidentialité</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors duration-200">Mentions légales</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors duration-200">CGV</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </section>
+    </footer>
 
-    <section class="projects-cta">
-      <h2>Vous avez un projet similaire ?</h2>
-      <p>Contactez-nous pour discuter de votre projet et découvrir comment nous pouvons vous accompagner dans votre transformation numérique.</p>
-      <a href="contact.html" class="cta">Démarrer votre projet</a>
-    </section>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-200 opacity-0 pointer-events-none">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-    <!-- À placer avant le footer -->
-    <section class="partners">
-      <h2>Ils nous font confiance</h2>
-      <div class="partners-logos">
-        <img src="img/partenaire1.png" alt="Logo partenaire 1 - Association Jeunesse Active" title="Association Jeunesse Active">
-        <img src="img/partenaire2.png" alt="Logo partenaire 2" title="Partenaire 2">
-        <img src="img/partenaire3.png" alt="Logo partenaire 3" title="Partenaire 3">
-        <!-- Ajoutez d'autres logos -->
-      </div>
-    </section>
+    <!-- Scripts -->
+    <script src="js/modern.js"></script>
+    
+    <!-- Portfolio Filter Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.portfolio-filter');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
 
-    <section class="certifications">
-      <h2>Nos certifications & engagements</h2>
-      <div class="certifications-logos">
-        <img src="img/certif1.png" alt="Certification 1" title="Certification 1">
-        <img src="img/certif2.png" alt="Certification 2" title="Certification 2">
-        <!-- Ajoutez ici vos vraies certifications -->
-      </div>
-    </section>
-
-    <section class="team">
-      <h2>Notre équipe</h2>
-      <div class="team-grid">
-        <div class="team-member">
-          <img src="img/team1.jpg" alt="Cheikh Tidiane Samba BA">
-          <h3>Cheikh Tidiane Samba BA</h3>
-          <p>Fondateur & Directeur Technique</p>
-        </div>
-        <div class="team-member">
-          <img src="img/team2.jpg" alt="Nom Prénom">
-          <h3>Nom Prénom</h3>
-          <p>Responsable Projets</p>
-        </div>
-        <!-- Ajoutez d'autres membres -->
-      </div>
-
-    <section class="faq">
-      <h2>Questions fréquentes</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <h3>Quels types de projets réalisez-vous ?</h3>
-          <p>Nous accompagnons les associations, ONG et institutions dans la digitalisation, le développement web/mobile, la gestion de projets et l’innovation sociale.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Comment débuter avec Opentech ?</h3>
-          <p>Contactez-nous via le formulaire ou par téléphone pour une première discussion gratuite sur vos besoins.</p>
-        </div>
-        <!-- Ajoutez d'autres questions/réponses -->
-      </div>
-    </section>
-  </main>
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>Opentech</h3>
-        <p>Votre partenaire de confiance pour la transformation numérique</p>
-      </div>
-      <div class="footer-section">
-        <h3>Contact</h3>
-        <p><i class="fas fa-envelope"></i> cheikhtidianesamba.ba@ucad.edu.sn</p>
-        <p><i class="fas fa-phone"></i> +221 70 609 83 43</p>
-      </div>
-      <div class="footer-section">
-        <h3>Suivez-nous</h3>
-      <div class="social-links">
-        <a href="https://linkedin.com/in/opentech221" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-        <a href="https://twitter.com/opentech221" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-        <a href="https://facebook.com/opentech221" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
-      </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 Opentech. Tous droits réservés. | <a href="mentions-legales.html">Mentions légales</a> | <a href="confidentialite.html">Politique de confidentialité</a></p>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active', 'bg-blue-600', 'text-white');
+                        btn.classList.add('bg-gray-100', 'text-gray-700');
+                    });
+                    
+                    this.classList.add('active', 'bg-blue-600', 'text-white');
+                    this.classList.remove('bg-gray-100', 'text-gray-700');
+                    
+                    // Filter portfolio items
+                    portfolioItems.forEach(item => {
+                        if (filter === 'all') {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 100);
+                        } else {
+                            const categories = item.getAttribute('data-category').split(' ');
+                            if (categories.includes(filter)) {
+                                item.style.display = 'block';
+                                setTimeout(() => {
+                                    item.style.opacity = '1';
+                                    item.style.transform = 'scale(1)';
+                                }, 100);
+                            } else {
+                                item.style.opacity = '0';
+                                item.style.transform = 'scale(0.8)';
+                                setTimeout(() => {
+                                    item.style.display = 'none';
+                                }, 300);
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>

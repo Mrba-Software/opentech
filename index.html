@@ -1,251 +1,1422 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Opentech - Accueil</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>Opentech - Solutions Numériques pour l'Impact Social</title>
+  <meta name="description" content="Opentech accompagne les organisations dans leur transformation numérique pour créer un impact social positif. Développement web, applications mobiles, consulting digital.">
+  <meta name="keywords" content="développement web, transformation numérique, impact social, applications mobiles, consulting digital">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  
+  <!-- Preconnect pour améliorer les performances -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'inter': ['Inter', 'sans-serif'],
+            'poppins': ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            'primary': {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e'
+            },
+            'secondary': {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              200: '#bbf7d0',
+              300: '#86efac',
+              400: '#4ade80',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d'
+            },
+            'accent': {
+              50: '#fff5f5',
+              100: '#fed7d7',
+              200: '#feb2b2',
+              300: '#fc8181',
+              400: '#f56565',
+              500: '#e53e3e',
+              600: '#c53030',
+              700: '#9b2c2c',
+              800: '#822727',
+              900: '#63171b'
+            }
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.8s ease-out',
+            'slide-up': 'slideUp 0.8s ease-out',
+            'slide-in-left': 'slideInLeft 0.8s ease-out',
+            'slide-in-right': 'slideInRight 0.8s ease-out',
+            'bounce-slow': 'bounce 2s infinite',
+            'pulse-slow': 'pulse 3s infinite',
+            'float': 'float 3s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' }
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' }
+            },
+            slideInLeft: {
+              '0%': { opacity: '0', transform: 'translateX(-30px)' },
+              '100%': { opacity: '1', transform: 'translateX(0)' }
+            },
+            slideInRight: {
+              '0%': { opacity: '0', transform: 'translateX(30px)' },
+              '100%': { opacity: '1', transform: 'translateX(0)' }
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/modern-style.css">
+  
+  <!-- Navigation Loader -->
+  <script src="js/navbar-loader.js"></script>
 </head>
-<body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">Opentech</div>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <ul class="nav-menu">
-        <li><a href="index.html" class="active">Accueil</a></li>
-        <li><a href="about.html">À propos</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="projects.html">Réalisations</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<body class="font-inter text-slate-800 bg-slate-50" data-active-page="home">
+  <!-- Navigation Placeholder -->
+  <div id="navbar-placeholder"></div>
 
   <main>
-    <section class="hero">
-      <h1>Transformez votre vision en réalité numérique</h1>
-      <p>Nous accompagnons les organisations dans leur transformation numérique pour un impact social positif.</p>
-      <div class="hero-buttons">
-        <a href="contact.html" class="cta">Démarrer votre projet</a>
-        <a href="services.html" class="secondary-cta">Découvrir nos services</a>
+    <!-- Hero Section -->
+    <section id="accueil" class="relative min-h-screen pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-40 flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-primary-900 to-secondary-900">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(34,197,94,0.1),transparent_50%)]"></div>
+      
+      <!-- Floating Elements -->
+      <div class="absolute top-20 left-10 w-20 h-20 bg-primary-400/20 rounded-full animate-float"></div>
+      <div class="absolute top-40 right-20 w-16 h-16 bg-secondary-400/20 rounded-full animate-float" style="animation-delay: 1s;"></div>
+      <div class="absolute bottom-32 left-1/4 w-12 h-12 bg-accent-400/20 rounded-full animate-float" style="animation-delay: 2s;"></div>
+      
+      <div class="container mx-auto px-4 lg:px-8 text-center relative z-10">
+        <div class="max-w-5xl mx-auto">
+          <!-- Badge -->
+          <div class="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8 animate-fade-in">
+            <i class="fas fa-rocket text-primary-300 mr-2"></i>
+            <span class="text-white/90 text-sm font-medium">Innovation • Impact Social • Excellence</span>
+          </div>
+          
+          <!-- Main Title -->
+          <h1 class="font-poppins font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-tight mb-6 animate-slide-up px-4">
+            Transformez votre
+            <span class="bg-gradient-to-r from-primary-400 via-secondary-400 to-primary-300 bg-clip-text text-transparent">
+              vision numérique
+            </span>
+            en réalité
+          </h1>
+          
+          <!-- Subtitle -->
+          <p class="text-lg sm:text-xl md:text-2xl text-slate-300 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed animate-slide-up px-4" style="animation-delay: 0.2s;">
+            Nous accompagnons les organisations dans leur transformation digitale pour créer un impact social durable et mesurable.
+          </p>
+          
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center animate-slide-up px-4" style="animation-delay: 0.4s;">
+            <a href="#contact" class="group bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:from-primary-600 hover:to-secondary-600 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-primary-500/25 inline-flex items-center w-full sm:w-auto justify-center">
+              <span>Démarrer votre projet</span>
+              <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+            </a>
+            <a href="#services" class="group bg-white/10 backdrop-blur-sm border border-white/20 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-white/20 transform hover:scale-105 transition-all duration-300 inline-flex items-center w-full sm:w-auto justify-center">
+              <i class="fas fa-play mr-2 group-hover:scale-110 transition-transform duration-300"></i>
+              <span>Découvrir nos services</span>
+            </a>
+          </div>
+          
+          <!-- Stats -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 animate-slide-up" style="animation-delay: 0.6s;">
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-bold text-white mb-2">50+</div>
+              <div class="text-slate-300 text-sm md:text-base">Projets Réalisés</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-bold text-white mb-2">100+</div>
+              <div class="text-slate-300 text-sm md:text-base">Clients Satisfaits</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-bold text-white mb-2">200%</div>
+              <div class="text-slate-300 text-sm md:text-base">Croissance Moyenne</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-bold text-white mb-2">5+</div>
+              <div class="text-slate-300 text-sm md:text-base">Années d'Expertise</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <a href="#about" class="text-white/70 hover:text-white transition-colors duration-300">
+          <i class="fas fa-chevron-down text-2xl"></i>
+        </a>
       </div>
     </section>
 
-    <section class="impact">
-      <h2>Notre Impact</h2>
-      <div class="impact-grid">
-        <div class="impact-card">
-          <i class="fas fa-project-diagram"></i>
-          <h3>50+</h3>
-          <p>Projets Réalisés</p>
-        </div>
-        <div class="impact-card">
-          <i class="fas fa-users"></i>
-          <h3>100+</h3>
-          <p>Associations Accompagnées</p>
-        </div>
-        <div class="impact-card">
-          <i class="fas fa-chart-line"></i>
-          <h3>200%</h3>
-          <p>Croissance Moyenne</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="expertise">
-      <h2>Notre Expertise</h2>
-      <div class="expertise-grid">
-        <div class="expertise-card">
-          <i class="fas fa-laptop-code"></i>
-          <h3>Développement Web</h3>
-          <p>Sites web modernes et applications sur mesure</p>
-        </div>
-        <div class="expertise-card">
-          <i class="fas fa-mobile-alt"></i>
-          <h3>Applications Mobiles</h3>
-          <p>Solutions mobiles innovantes et performantes</p>
-        </div>
-        <div class="expertise-card">
-          <i class="fas fa-bullhorn"></i>
-          <h3>Communication Digitale</h3>
-          <p>Stratégies de communication efficaces</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="testimonials">
-      <h2>Témoignages</h2>
-      <div class="testimonial-carousel">
-        <div class="testimonial-track">
-          <div class="testimonial-slide">
-            <div class="testimonial-content">
-              <p>"Opentech a transformé notre présence en ligne. Leur expertise technique et leur compréhension de nos besoins ont été exceptionnelles."</p>
-              <div class="testimonial-author">
-                <img src="https://via.placeholder.com/50" alt="Photo de Marie">
-                <div>
-                  <h4>Marie Dupont</h4>
-                  <p>Directrice, Association Jeunesse Active</p>
+    <!-- About Section -->
+    <section id="about" class="py-20 md:py-32 bg-white relative overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_80%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+      
+      <div class="container mx-auto px-4 lg:px-8 relative z-10">
+        <div class="max-w-6xl mx-auto">
+          <!-- Section Header -->
+          <div class="text-center mb-16">
+            <div class="inline-flex items-center bg-primary-50 text-primary-600 rounded-full px-4 py-2 mb-6">
+              <i class="fas fa-users mr-2"></i>
+              <span class="font-medium">Qui Sommes-Nous</span>
+            </div>
+            <h2 class="font-poppins font-bold text-3xl md:text-5xl text-slate-900 mb-6">
+              L'expertise au service de
+              <span class="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+                l'impact social
+              </span>
+            </h2>
+            <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Fondée par des passionnés de technologie et d'innovation sociale, Opentech combine expertise technique et vision humaniste pour créer des solutions qui transforment positivement la société.
+            </p>
+          </div>
+          
+          <!-- Content Grid -->
+          <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <!-- Left Content -->
+            <div class="space-y-8">
+              <!-- Mission -->
+              <div class="group">
+                <div class="flex items-start space-x-4">
+                  <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-bullseye text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-poppins font-bold text-2xl text-slate-900 mb-3">Notre Mission</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                      Démocratiser l'accès aux technologies numériques en accompagnant les organisations dans leur transformation digitale, tout en créant un impact social positif et mesurable.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Vision -->
+              <div class="group">
+                <div class="flex items-start space-x-4">
+                  <div class="w-12 h-12 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-xl flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-eye text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-poppins font-bold text-2xl text-slate-900 mb-3">Notre Vision</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                      Un monde où la technologie est un levier d'inclusion et de développement durable, accessible à tous et au service du bien commun.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Values -->
+              <div class="group">
+                <div class="flex items-start space-x-4">
+                  <div class="w-12 h-12 bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-heart text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-poppins font-bold text-2xl text-slate-900 mb-3">Nos Valeurs</h3>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="bg-primary-50 text-primary-700 px-3 py-1 rounded-full text-sm font-medium">Innovation</span>
+                      <span class="bg-secondary-50 text-secondary-700 px-3 py-1 rounded-full text-sm font-medium">Inclusivité</span>
+                      <span class="bg-accent-50 text-accent-700 px-3 py-1 rounded-full text-sm font-medium">Excellence</span>
+                      <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-sm font-medium">Transparence</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Right Content - Image & Stats -->
+            <div class="relative">
+              <div class="bg-gradient-to-br from-primary-500 via-secondary-500 to-primary-600 rounded-3xl p-8 text-white relative overflow-hidden">
+                <!-- Background Pattern -->
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1),transparent_50%)]"></div>
+                
+                <div class="relative z-10">
+                  <div class="text-center mb-8">
+                    <div class="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <i class="fas fa-chart-line text-3xl"></i>
+                    </div>
+                    <h3 class="font-poppins font-bold text-2xl mb-2">Notre Impact</h3>
+                    <p class="text-white/90">Des résultats concrets et mesurables</p>
+                  </div>
+                  
+                  <div class="grid grid-cols-2 gap-6">
+                    <div class="text-center bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                      <div class="text-2xl font-bold mb-1">50+</div>
+                      <div class="text-sm text-white/80">Projets Livrés</div>
+                    </div>
+                    <div class="text-center bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                      <div class="text-2xl font-bold mb-1">100+</div>
+                      <div class="text-sm text-white/80">Organisations</div>
+                    </div>
+                    <div class="text-center bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                      <div class="text-2xl font-bold mb-1">200%</div>
+                      <div class="text-sm text-white/80">ROI Moyen</div>
+                    </div>
+                    <div class="text-center bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                      <div class="text-2xl font-bold mb-1">95%</div>
+                      <div class="text-sm text-white/80">Satisfaction</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="testimonial-slide">
-            <div class="testimonial-content">
-              <p>"Une équipe professionnelle qui comprend vraiment les enjeux du développement communautaire. Leur approche est innovante et efficace."</p>
-              <div class="testimonial-author">
-                <img src="https://via.placeholder.com/50" alt="Photo de Jean">
-                <div>
-                  <h4>Jean Martin</h4>
-                  <p>Président, ONG Solidarité</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-slide">
-            <div class="testimonial-content">
-              <p>"Leur expertise en transformation numérique nous a permis d'atteindre de nouveaux publics et d'améliorer significativement notre impact."</p>
-              <div class="testimonial-author">
-                <img src="https://via.placeholder.com/50" alt="Photo de Sophie">
-                <div>
-                  <h4>Sophie Bernard</h4>
-                  <p>Directrice, Femmes Entrepreneures</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-slide">
-            <div class="testimonial-content">
-              <p>"Opentech a révolutionné notre façon de communiquer avec nos bénéficiaires. Leur solution mobile a considérablement amélioré notre efficacité opérationnelle."</p>
-              <div class="testimonial-author">
-                <img src="https://via.placeholder.com/50" alt="Photo de Thomas">
-                <div>
-                  <h4>Thomas Leroy</h4>
-                  <p>Coordinateur, Action Sociale Plus</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-slide">
-            <div class="testimonial-content">
-              <p>"Une équipe à l'écoute qui a su transformer nos besoins en solutions concrètes. Leur accompagnement a été déterminant pour notre succès."</p>
-              <div class="testimonial-author">
-                <img src="https://via.placeholder.com/50" alt="Photo de Claire">
-                <div>
-                  <h4>Claire Dubois</h4>
-                  <p>Fondatrice, Éducation Pour Tous</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-slide">
-            <div class="testimonial-content">
-              <p>"Leur approche centrée sur l'impact social a permis à notre association d'atteindre des objectifs que nous pensions inaccessibles."</p>
-              <div class="testimonial-author">
-                <img src="https://via.placeholder.com/50" alt="Photo de Marc">
-                <div>
-                  <h4>Marc Laurent</h4>
-                  <p>Directeur, Innovation Sociale</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-controls">
-          <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
-          <div class="carousel-dots"></div>
-          <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
         </div>
       </div>
     </section>
 
-    <section class="cta-section">
-      <h2>Prêt à démarrer votre projet ?</h2>
-      <p>Contactez-nous pour discuter de votre projet et découvrir comment nous pouvons vous accompagner dans votre transformation numérique.</p>
-      <a href="contact.html" class="cta-button">Démarrer votre projet</a>
-    </section>
-
-    <section class="partners">
-      <h2>Ils nous font confiance</h2>
-      <div class="partners-logos">
-        <img src="img/partenaire1.png" alt="Logo partenaire 1 - Association Jeunesse Active" title="Association Jeunesse Active">
-        <img src="img/partenaire2.png" alt="Logo partenaire 2" title="Partenaire 2">
-        <img src="img/partenaire3.png" alt="Logo partenaire 3" title="Partenaire 3">
-        <!-- Ajoutez d'autres logos -->
+    <!-- Services Section -->
+    <section id="services" class="py-20 md:py-32 bg-slate-50 relative overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(34,197,94,0.05),transparent_50%)]"></div>
+      
+      <div class="container mx-auto px-4 lg:px-8 relative z-10">
+        <div class="max-w-6xl mx-auto">
+          <!-- Section Header -->
+          <div class="text-center mb-16">
+            <div class="inline-flex items-center bg-secondary-50 text-secondary-600 rounded-full px-4 py-2 mb-6">
+              <i class="fas fa-cogs mr-2"></i>
+              <span class="font-medium">Nos Services</span>
+            </div>
+            <h2 class="font-poppins font-bold text-3xl md:text-5xl text-slate-900 mb-6">
+              Des solutions complètes pour votre
+              <span class="bg-gradient-to-r from-secondary-600 to-primary-600 bg-clip-text text-transparent">
+                transformation digitale
+              </span>
+            </h2>
+            <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Nous offrons une gamme complète de services numériques adaptés aux besoins spécifiques de votre organisation.
+            </p>
+          </div>
+          
+          <!-- Services Grid -->
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Service 1 -->
+            <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 hover:border-primary-200 relative overflow-hidden">
+              <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 to-secondary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+              
+              <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-laptop-code text-2xl"></i>
+              </div>
+              
+              <h3 class="font-poppins font-bold text-xl text-slate-900 mb-4">Développement Web</h3>
+              <p class="text-slate-600 leading-relaxed mb-6">
+                Sites web modernes, applications web sur mesure et plateformes e-commerce performantes et sécurisées.
+              </p>
+              
+              <div class="space-y-2 mb-6">
+                <div class="flex items-center text-sm text-slate-500">
+                  <i class="fas fa-check text-primary-500 mr-2"></i>
+                  <span>Sites web responsives</span>
+                </div>
+                <div class="flex items-center text-sm text-slate-500">
+                  <i class="fas fa-check text-primary-500 mr-2"></i>
+                  <span>Applications web complexes</span>
+                </div>
+                <div class="flex items-center text-sm text-slate-500">
+                  <i class="fas fa-check text-primary-500 mr-2"></i>
+                  <span>E-commerce & CMS</span>
+                </div>
+              </div>
+              
+              <a href="#contact" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold group-hover:translate-x-1 transition-all duration-300">
+                En savoir plus 
+                <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+            
+            <!-- Service 2 -->
+            <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 hover:border-secondary-200 relative overflow-hidden">
+              <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary-500 to-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+              
+              <div class="w-16 h-16 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-mobile-alt text-2xl"></i>
+              </div>
+              
+              <h3 class="font-poppins font-bold text-xl text-slate-900 mb-4">Applications Mobiles</h3>
+              <p class="text-slate-600 leading-relaxed mb-6">
+                Applications mobiles natives et cross-platform pour iOS et Android, optimisées pour l'expérience utilisateur.
+              </p>
+              
+              <div class="space-y-2 mb-6">
+                <div class="flex items-center text-sm text-slate-500">
+                  <i class="fas fa-check text-secondary-500 mr-2"></i>
+                  <span>Applications natives</span>
+                </div>
+                <div class="flex items-center text-sm text-slate-500">
+                  <i class="fas fa-check text-secondary-500 mr-2"></i>
+                  <span>Solutions cross-platform</span>
+                </div>
+                <div class="flex items-center text-sm text-slate-500">
+                  <i class="fas fa-check text-secondary-500 mr-2"></i>
+                  <span>UX/UI optimisées</span>
+                </div>
+              </div>
+              
+              <a href="#contact" class="inline-flex items-center text-secondary-600 hover:text-secondary-700 font-semibold group-hover:translate-x-1 transition-all duration-300">
+                En savoir plus 
+                <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+            
+            <!-- Service 3 -->
+            <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 hover:border-accent-200 relative overflow-hidden">
+              <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent-500 to-secondary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+              
+              <div class="w-16 h-16 bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-bullhorn text-2xl"></i>
+              </div>
+              
+              <h3 class="font-poppins font-bold text-xl text-slate-900 mb-4">Communication Digitale</h3>
+              <p class="text-slate-600 leading-relaxed mb-6">
+                Stratégies de communication numérique, branding et marketing digital pour amplifier votre impact.
+              </p>
+              
+              <div class="space-y-2 mb-6">
+                <div class="flex items-center text-sm text-slate-500">
+                  <i class="fas fa-check text-accent-500 mr-2"></i>
+                  <span>Stratégie digitale</span>
+                </div>
+                <div class="flex items-center text-sm text-slate-500">
+                  <i class="fas fa-check text-accent-500 mr-2"></i>
+                  <span>Branding & identité</span>
+                </div>
+                <div class="flex items-center text-sm text-slate-500">
+                  <i class="fas fa-check text-accent-500 mr-2"></i>
+                  <span>Marketing digital</span>
+                </div>
+              </div>
+              
+              <a href="#contact" class="inline-flex items-center text-accent-600 hover:text-accent-700 font-semibold group-hover:translate-x-1 transition-all duration-300">
+                En savoir plus 
+                <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+            
+            <!-- Service 4 -->
+            <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 hover:border-primary-200 relative overflow-hidden">
+              <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 to-accent-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+              
+              <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-lightbulb text-2xl"></i>
+              </div>
+              
+              <h3 class="font-poppins font-bold text-xl text-slate-900 mb-4">Consulting Digital</h3>
+              <p class="text-slate-600 leading-relaxed mb-6">
+                Accompagnement stratégique pour votre transformation digitale et optimisation de vos processus.
+              </p>
+              
+              <div class="space-y-2 mb-6">
+                <div class="flex items-center text-sm text-slate-500">
+                  <i class="fas fa-check text-primary-500 mr-2"></i>
+                  <span>Audit digital</span>
+                </div>
+                <div class="flex items-center text-sm text-slate-500">
+                  <i class="fas fa-check text-primary-500 mr-2"></i>
+                  <span>Stratégie de transformation</span>
+                </div>
+                <div class="flex items-center text-sm text-slate-500">
+                  <i class="fas fa-check text-primary-500 mr-2"></i>
+                  <span>Optimisation des processus</span>
+                </div>
+              </div>
+              
+              <a href="#contact" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold group-hover:translate-x-1 transition-all duration-300">
+                En savoir plus 
+                <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+            
+            <!-- Service 5 -->
+            <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 hover:border-secondary-200 relative overflow-hidden">
+              <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary-500 to-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+              
+              <div class="w-16 h-16 bg-gradient-to-br from-secondary-500 to-primary-500 rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-shield-alt text-2xl"></i>
+              </div>
+              
+              <h3 class="font-poppins font-bold text-xl text-slate-900 mb-4">Sécurité & Maintenance</h3>
+              <p class="text-slate-600 leading-relaxed mb-6">
+                Sécurisation de vos systèmes, maintenance préventive et support technique continu.
+              </p>
+              
+              <div class="space-y-2 mb-6">
+                <div class="flex items-center text-sm text-slate-500">
+                  <i class="fas fa-check text-secondary-500 mr-2"></i>
+                  <span>Sécurité des données</span>
+                </div>
+                <div class="flex items-center text-sm text-slate-500">
+                  <i class="fas fa-check text-secondary-500 mr-2"></i>
+                  <span>Maintenance préventive</span>
+                </div>
+                <div class="flex items-center text-sm text-slate-500">
+                  <i class="fas fa-check text-secondary-500 mr-2"></i>
+                  <span>Support technique 24/7</span>
+                </div>
+              </div>
+              
+              <a href="#contact" class="inline-flex items-center text-secondary-600 hover:text-secondary-700 font-semibold group-hover:translate-x-1 transition-all duration-300">
+                En savoir plus 
+                <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+            
+            <!-- Service 6 -->
+            <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 hover:border-accent-200 relative overflow-hidden">
+              <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent-500 to-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+              
+              <div class="w-16 h-16 bg-gradient-to-br from-accent-500 to-primary-500 rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-graduation-cap text-2xl"></i>
+              </div>
+              
+              <h3 class="font-poppins font-bold text-xl text-slate-900 mb-4">Formation & Coaching</h3>
+              <p class="text-slate-600 leading-relaxed mb-6">
+                Formation de vos équipes aux outils numériques et accompagnement dans l'adoption des nouvelles technologies.
+              </p>
+              
+              <div class="space-y-2 mb-6">
+                <div class="flex items-center text-sm text-slate-500">
+                  <i class="fas fa-check text-accent-500 mr-2"></i>
+                  <span>Formation sur mesure</span>
+                </div>
+                <div class="flex items-center text-sm text-slate-500">
+                  <i class="fas fa-check text-accent-500 mr-2"></i>
+                  <span>Coaching d'équipe</span>
+                </div>
+                <div class="flex items-center text-sm text-slate-500">
+                  <i class="fas fa-check text-accent-500 mr-2"></i>
+                  <span>Accompagnement au changement</span>
+                </div>
+              </div>
+              
+              <a href="#contact" class="inline-flex items-center text-accent-600 hover:text-accent-700 font-semibold group-hover:translate-x-1 transition-all duration-300">
+                En savoir plus 
+                <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="certifications">
-      <h2>Nos certifications & engagements</h2>
-      <div class="certifications-logos">
-        <img src="img/certif1.png" alt="Certification 1" title="Certification 1">
-        <img src="img/certif2.png" alt="Certification 2" title="Certification 2">
-        <!-- Ajoutez ici vos vraies certifications -->
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 md:py-32 bg-white relative overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(239,68,68,0.05),transparent_50%)]"></div>
+      
+      <div class="container mx-auto px-4 lg:px-8 relative z-10">
+        <div class="max-w-6xl mx-auto">
+          <!-- Section Header -->
+          <div class="text-center mb-16">
+            <div class="inline-flex items-center bg-accent-50 text-accent-600 rounded-full px-4 py-2 mb-6">
+              <i class="fas fa-project-diagram mr-2"></i>
+              <span class="font-medium">Nos Réalisations</span>
+            </div>
+            <h2 class="font-poppins font-bold text-3xl md:text-5xl text-slate-900 mb-6">
+              Des projets qui
+              <span class="bg-gradient-to-r from-accent-600 to-primary-600 bg-clip-text text-transparent">
+                transforment
+              </span>
+            </h2>
+            <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Découvrez comment nous avons accompagné nos clients dans leur transformation digitale avec des solutions innovantes et sur mesure.
+            </p>
+          </div>
+          
+          <!-- Projects Grid -->
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project 1 -->
+            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100">
+              <div class="relative overflow-hidden">
+                <div class="w-full h-48 bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center">
+                  <i class="fas fa-laptop-code text-6xl text-white/80"></i>
+                </div>
+                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+              </div>
+              
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="bg-primary-50 text-primary-600 px-3 py-1 rounded-full text-sm font-medium">Site Web</span>
+                  <div class="flex items-center space-x-1">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                  </div>
+                </div>
+                
+                <h3 class="font-poppins font-bold text-xl text-slate-900 mb-3">Plateforme Éducative</h3>
+                <p class="text-slate-600 leading-relaxed mb-4">
+                  Développement d'une plateforme e-learning complète pour une ONG éducative, permettant la formation à distance de plus de 1000 apprenants.
+                </p>
+                
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="bg-slate-100 text-slate-700 px-2 py-1 rounded text-xs">React</span>
+                  <span class="bg-slate-100 text-slate-700 px-2 py-1 rounded text-xs">Node.js</span>
+                  <span class="bg-slate-100 text-slate-700 px-2 py-1 rounded text-xs">MongoDB</span>
+                </div>
+                
+                <div class="flex items-center justify-between">
+                  <div class="text-sm text-slate-500">
+                    <i class="fas fa-users mr-1"></i>
+                    1000+ utilisateurs
+                  </div>
+                  <a href="#contact" class="text-primary-600 hover:text-primary-700 font-semibold">
+                    Voir plus <i class="fas fa-arrow-right ml-1"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100">
+              <div class="relative overflow-hidden">
+                <div class="w-full h-48 bg-gradient-to-br from-secondary-500 to-accent-500 flex items-center justify-center">
+                  <i class="fas fa-mobile-alt text-6xl text-white/80"></i>
+                </div>
+                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+              </div>
+              
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="bg-secondary-50 text-secondary-600 px-3 py-1 rounded-full text-sm font-medium">App Mobile</span>
+                  <div class="flex items-center space-x-1">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                  </div>
+                </div>
+                
+                <h3 class="font-poppins font-bold text-xl text-slate-900 mb-3">App Santé Communautaire</h3>
+                <p class="text-slate-600 leading-relaxed mb-4">
+                  Application mobile de suivi de santé pour les communautés rurales, avec fonctionnalités offline et synchronisation automatique.
+                </p>
+                
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="bg-slate-100 text-slate-700 px-2 py-1 rounded text-xs">Flutter</span>
+                  <span class="bg-slate-100 text-slate-700 px-2 py-1 rounded text-xs">Firebase</span>
+                  <span class="bg-slate-100 text-slate-700 px-2 py-1 rounded text-xs">Offline</span>
+                </div>
+                
+                <div class="flex items-center justify-between">
+                  <div class="text-sm text-slate-500">
+                    <i class="fas fa-download mr-1"></i>
+                    5000+ téléchargements
+                  </div>
+                  <a href="#contact" class="text-secondary-600 hover:text-secondary-700 font-semibold">
+                    Voir plus <i class="fas fa-arrow-right ml-1"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Project 3 -->
+            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100">
+              <div class="relative overflow-hidden">
+                <div class="w-full h-48 bg-gradient-to-br from-accent-500 to-primary-500 flex items-center justify-center">
+                  <i class="fas fa-chart-line text-6xl text-white/80"></i>
+                </div>
+                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+              </div>
+              
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="bg-accent-50 text-accent-600 px-3 py-1 rounded-full text-sm font-medium">Dashboard</span>
+                  <div class="flex items-center space-x-1">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                  </div>
+                </div>
+                
+                <h3 class="font-poppins font-bold text-xl text-slate-900 mb-3">Tableau de bord Analytics</h3>
+                <p class="text-slate-600 leading-relaxed mb-4">
+                  Système de visualisation de données en temps réel pour le suivi de l'impact social d'une organisation internationale.
+                </p>
+                
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="bg-slate-100 text-slate-700 px-2 py-1 rounded text-xs">Vue.js</span>
+                  <span class="bg-slate-100 text-slate-700 px-2 py-1 rounded text-xs">D3.js</span>
+                  <span class="bg-slate-100 text-slate-700 px-2 py-1 rounded text-xs">Python</span>
+                </div>
+                
+                <div class="flex items-center justify-between">
+                  <div class="text-sm text-slate-500">
+                    <i class="fas fa-database mr-1"></i>
+                    1M+ données traitées
+                  </div>
+                  <a href="#contact" class="text-accent-600 hover:text-accent-700 font-semibold">
+                    Voir plus <i class="fas fa-arrow-right ml-1"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- View All Projects Button -->
+          <div class="text-center mt-12">
+            <a href="#contact" class="inline-flex items-center bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-primary-600 hover:to-secondary-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+              <span>Voir tous nos projets</span>
+              <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="team">
-      <h2>Notre équipe</h2>
-      <div class="team-grid">
-        <div class="team-member">
-          <img src="img/team1.jpg" alt="Cheikh Tidiane Samba BA">
-          <h3>Cheikh Tidiane Samba BA</h3>
-          <p>Fondateur & Directeur Technique</p>
+    <!-- Testimonials Section -->
+    <section class="py-20 md:py-32 bg-slate-50 relative overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+      
+      <div class="container mx-auto px-4 lg:px-8 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <!-- Section Header -->
+          <div class="text-center mb-16">
+            <div class="inline-flex items-center bg-primary-50 text-primary-600 rounded-full px-4 py-2 mb-6">
+              <i class="fas fa-quote-left mr-2"></i>
+              <span class="font-medium">Témoignages</span>
+            </div>
+            <h2 class="font-poppins font-bold text-3xl md:text-5xl text-slate-900 mb-6">
+              Ce que disent nos
+              <span class="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+                clients
+              </span>
+            </h2>
+          </div>
+          
+          <!-- Testimonials Carousel -->
+          <div class="relative">
+            <div id="testimonials-container" class="overflow-hidden">
+              <div id="testimonials-track" class="flex transition-transform duration-500 ease-in-out">
+                <!-- Testimonial 1 -->
+                <div class="w-full flex-shrink-0 px-4">
+                  <div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 text-center relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
+                    
+                    <div class="flex justify-center mb-6">
+                      <div class="flex space-x-1">
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                      </div>
+                    </div>
+                    
+                    <blockquote class="text-xl text-slate-700 leading-relaxed mb-8 italic font-medium">
+                      "Opentech a transformé notre présence en ligne. Leur expertise technique et leur compréhension de nos besoins ont été exceptionnelles. Notre impact social a doublé grâce à leur solution."
+                    </blockquote>
+                    
+                    <div class="flex items-center justify-center space-x-4">
+                      <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                        M
+                      </div>
+                      <div class="text-left">
+                        <div class="font-poppins font-bold text-lg text-slate-900">Marie Dupont</div>
+                        <div class="text-slate-600 text-sm">Directrice, Association Jeunesse Active</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="w-full flex-shrink-0 px-4">
+                  <div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 text-center relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary-500 to-accent-500"></div>
+                    
+                    <div class="flex justify-center mb-6">
+                      <div class="flex space-x-1">
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                      </div>
+                    </div>
+                    
+                    <blockquote class="text-xl text-slate-700 leading-relaxed mb-8 italic font-medium">
+                      "Une équipe professionnelle qui comprend vraiment les enjeux du développement communautaire. Leur approche est innovante et efficace."
+                    </blockquote>
+                    
+                    <div class="flex items-center justify-center space-x-4">
+                      <div class="w-16 h-16 bg-gradient-to-br from-secondary-500 to-accent-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                        J
+                      </div>
+                      <div class="text-left">
+                        <div class="font-poppins font-bold text-lg text-slate-900">Jean Martin</div>
+                        <div class="text-slate-600 text-sm">Président, ONG Solidarité</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="w-full flex-shrink-0 px-4">
+                  <div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 text-center relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent-500 to-primary-500"></div>
+                    
+                    <div class="flex justify-center mb-6">
+                      <div class="flex space-x-1">
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                      </div>
+                    </div>
+                    
+                    <blockquote class="text-xl text-slate-700 leading-relaxed mb-8 italic font-medium">
+                      "Leur expertise en transformation numérique nous a permis d'atteindre de nouveaux publics et d'améliorer significativement notre impact."
+                    </blockquote>
+                    
+                    <div class="flex items-center justify-center space-x-4">
+                      <div class="w-16 h-16 bg-gradient-to-br from-accent-500 to-primary-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                        S
+                      </div>
+                      <div class="text-left">
+                        <div class="font-poppins font-bold text-lg text-slate-900">Sophie Bernard</div>
+                        <div class="text-slate-600 text-sm">Directrice, Femmes Entrepreneures</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="w-full flex-shrink-0 px-4">
+                  <div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 text-center relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
+                    
+                    <div class="flex justify-center mb-6">
+                      <div class="flex space-x-1">
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                      </div>
+                    </div>
+                    
+                    <blockquote class="text-xl text-slate-700 leading-relaxed mb-8 italic font-medium">
+                      "Opentech a révolutionné notre façon de communiquer avec nos bénéficiaires. Leur solution mobile a considérablement amélioré notre efficacité opérationnelle."
+                    </blockquote>
+                    
+                    <div class="flex items-center justify-center space-x-4">
+                      <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                        T
+                      </div>
+                      <div class="text-left">
+                        <div class="font-poppins font-bold text-lg text-slate-900">Thomas Leroy</div>
+                        <div class="text-slate-600 text-sm">Coordinateur, Action Sociale Plus</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="w-full flex-shrink-0 px-4">
+                  <div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 text-center relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary-500 to-accent-500"></div>
+                    
+                    <div class="flex justify-center mb-6">
+                      <div class="flex space-x-1">
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                      </div>
+                    </div>
+                    
+                    <blockquote class="text-xl text-slate-700 leading-relaxed mb-8 italic font-medium">
+                      "Une équipe à l'écoute qui a su transformer nos besoins en solutions concrètes. Leur accompagnement a été déterminant pour notre succès."
+                    </blockquote>
+                    
+                    <div class="flex items-center justify-center space-x-4">
+                      <div class="w-16 h-16 bg-gradient-to-br from-secondary-500 to-accent-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                        C
+                      </div>
+                      <div class="text-left">
+                        <div class="font-poppins font-bold text-lg text-slate-900">Claire Dubois</div>
+                        <div class="text-slate-600 text-sm">Fondatrice, Éducation Pour Tous</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="w-full flex-shrink-0 px-4">
+                  <div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 text-center relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent-500 to-primary-500"></div>
+                    
+                    <div class="flex justify-center mb-6">
+                      <div class="flex space-x-1">
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                        <i class="fas fa-star text-yellow-400 text-lg"></i>
+                      </div>
+                    </div>
+                    
+                    <blockquote class="text-xl text-slate-700 leading-relaxed mb-8 italic font-medium">
+                      "Leur approche centrée sur l'impact social a permis à notre association d'atteindre des objectifs que nous pensions inaccessibles."
+                    </blockquote>
+                    
+                    <div class="flex items-center justify-center space-x-4">
+                      <div class="w-16 h-16 bg-gradient-to-br from-accent-500 to-primary-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                        M
+                      </div>
+                      <div class="text-left">
+                        <div class="font-poppins font-bold text-lg text-slate-900">Marc Laurent</div>
+                        <div class="text-slate-600 text-sm">Directeur, Innovation Sociale</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Carousel Navigation -->
+            <div class="flex items-center justify-center space-x-4 mt-8">
+              <button id="testimonials-prev" class="w-12 h-12 bg-white rounded-full shadow-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:text-primary-600 hover:border-primary-200 transition-all duration-300">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              
+              <div id="testimonials-dots" class="flex space-x-2">
+                <button class="w-3 h-3 rounded-full bg-primary-600 testimonial-dot active"></button>
+                <button class="w-3 h-3 rounded-full bg-slate-300 testimonial-dot"></button>
+                <button class="w-3 h-3 rounded-full bg-slate-300 testimonial-dot"></button>
+                <button class="w-3 h-3 rounded-full bg-slate-300 testimonial-dot"></button>
+                <button class="w-3 h-3 rounded-full bg-slate-300 testimonial-dot"></button>
+                <button class="w-3 h-3 rounded-full bg-slate-300 testimonial-dot"></button>
+              </div>
+              
+              <button id="testimonials-next" class="w-12 h-12 bg-white rounded-full shadow-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:text-primary-600 hover:border-primary-200 transition-all duration-300">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
         </div>
-        <div class="team-member">
-          <img src="img/team2.jpg" alt="Nom Prénom">
-          <h3>Nom Prénom</h3>
-          <p>Responsable Projets</p>
-        </div>
-        <!-- Ajoutez d'autres membres -->
       </div>
     </section>
 
-    <section class="faq">
-      <h2>Questions fréquentes</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <h3>Quels types de projets réalisez-vous ?</h3>
-          <p>Nous accompagnons les associations, ONG et institutions dans la digitalisation, le développement web/mobile, la gestion de projets et l’innovation sociale.</p>
+    <!-- CTA Section -->
+    <section class="py-20 md:py-32 bg-gradient-to-br from-primary-500 via-secondary-500 to-primary-600 relative overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(255,255,255,0.1),transparent_50%)]"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.05),transparent_50%)]"></div>
+      
+      <div class="container mx-auto px-4 lg:px-8 text-center relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8">
+            <i class="fas fa-rocket text-white mr-2"></i>
+            <span class="text-white/90 text-sm font-medium">Démarrons Ensemble</span>
+          </div>
+          
+          <h2 class="font-poppins font-bold text-3xl md:text-5xl text-white mb-6">
+            Prêt à démarrer votre projet ?
+          </h2>
+          <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
+            Contactez-nous pour discuter de votre projet et découvrir comment nous pouvons vous accompagner dans votre transformation numérique.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="contact.html" class="group bg-white text-primary-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/90 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
+              <i class="fas fa-paper-plane mr-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+              <span>Démarrer votre projet</span>
+            </a>
+            <a href="#services" class="group bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/20 transform hover:scale-105 transition-all duration-300 inline-flex items-center">
+              <i class="fas fa-info-circle mr-2 group-hover:scale-110 transition-transform duration-300"></i>
+              <span>En savoir plus</span>
+            </a>
+          </div>
         </div>
-        <div class="faq-item">
-          <h3>Comment débuter avec Opentech ?</h3>
-          <p>Contactez-nous via le formulaire ou par téléphone pour une première discussion gratuite sur vos besoins.</p>
+      </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="py-20 md:py-32 bg-white relative overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+      
+      <div class="container mx-auto px-4 lg:px-8 relative z-10">
+        <div class="max-w-6xl mx-auto">
+          <!-- Section Header -->
+          <div class="text-center mb-16">
+            <div class="inline-flex items-center bg-primary-50 text-primary-600 rounded-full px-4 py-2 mb-6">
+              <i class="fas fa-handshake mr-2"></i>
+              <span class="font-medium">Nos Partenaires</span>
+            </div>
+            <h2 class="font-poppins font-bold text-3xl md:text-5xl text-slate-900 mb-6">
+              Ils nous font
+              <span class="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+                confiance
+              </span>
+            </h2>
+            <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Des organisations de renom qui ont choisi Opentech pour leur transformation digitale et leur impact social.
+            </p>
+          </div>
+          
+          <!-- Partners Grid -->
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center">
+            <!-- Partner 1 -->
+            <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-primary-200 flex items-center justify-center min-h-[120px]">
+              <div class="w-full h-full bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-105 transition-transform duration-300">
+                Association<br>Jeunesse Active
+              </div>
+            </div>
+            
+            <!-- Partner 2 -->
+            <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-secondary-200 flex items-center justify-center min-h-[120px]">
+              <div class="w-full h-full bg-gradient-to-br from-secondary-500 to-accent-500 rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-105 transition-transform duration-300">
+                ONG<br>Solidarité
+              </div>
+            </div>
+            
+            <!-- Partner 3 -->
+            <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-accent-200 flex items-center justify-center min-h-[120px]">
+              <div class="w-full h-full bg-gradient-to-br from-accent-500 to-primary-500 rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-105 transition-transform duration-300">
+                Femmes<br>Entrepreneures
+              </div>
+            </div>
+            
+            <!-- Partner 4 -->
+            <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-primary-200 flex items-center justify-center min-h-[120px]">
+              <div class="w-full h-full bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-105 transition-transform duration-300">
+                Action Sociale<br>Plus
+              </div>
+            </div>
+            
+            <!-- Partner 5 -->
+            <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-secondary-200 flex items-center justify-center min-h-[120px]">
+              <div class="w-full h-full bg-gradient-to-br from-secondary-500 to-primary-500 rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-105 transition-transform duration-300">
+                Éducation<br>Pour Tous
+              </div>
+            </div>
+            
+            <!-- Partner 6 -->
+            <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-accent-200 flex items-center justify-center min-h-[120px]">
+              <div class="w-full h-full bg-gradient-to-br from-accent-500 to-secondary-500 rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-105 transition-transform duration-300">
+                Innovation<br>Sociale
+              </div>
+            </div>
+            
+            <!-- Partner 7 -->
+            <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-primary-200 flex items-center justify-center min-h-[120px]">
+              <div class="w-full h-full bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-105 transition-transform duration-300">
+                Développement<br>Durable
+              </div>
+            </div>
+            
+            <!-- Partner 8 -->
+            <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-secondary-200 flex items-center justify-center min-h-[120px]">
+              <div class="w-full h-full bg-gradient-to-br from-secondary-500 to-accent-500 rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-105 transition-transform duration-300">
+                Impact<br>Communautaire
+              </div>
+            </div>
+          </div>
+          
+          <!-- Stats Section -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-16 border-t border-slate-200">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+                50+
+              </div>
+              <div class="font-poppins font-bold text-lg text-slate-900 mb-2">Partenaires</div>
+              <div class="text-slate-600 text-sm">Organisations de confiance</div>
+            </div>
+            
+            <div class="text-center">
+              <div class="w-16 h-16 bg-gradient-to-br from-secondary-500 to-accent-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+                100+
+              </div>
+              <div class="font-poppins font-bold text-lg text-slate-900 mb-2">Projets</div>
+              <div class="text-slate-600 text-sm">Réalisés avec succès</div>
+            </div>
+            
+            <div class="text-center">
+              <div class="w-16 h-16 bg-gradient-to-br from-accent-500 to-primary-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+                5+
+              </div>
+              <div class="font-poppins font-bold text-lg text-slate-900 mb-2">Années</div>
+              <div class="text-slate-600 text-sm">D'expertise partagée</div>
+            </div>
+            
+            <div class="text-center">
+              <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+                200%
+              </div>
+              <div class="font-poppins font-bold text-lg text-slate-900 mb-2">Croissance</div>
+              <div class="text-slate-600 text-sm">Impact social moyen</div>
+            </div>
+          </div>
         </div>
-        <!-- Ajoutez d'autres questions/réponses -->
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="py-20 md:py-32 bg-slate-50 relative overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(34,197,94,0.05),transparent_50%)]"></div>
+      
+      <div class="container mx-auto px-4 lg:px-8 relative z-10">
+        <div class="max-w-6xl mx-auto">
+          <!-- Section Header -->
+          <div class="text-center mb-16">
+            <div class="inline-flex items-center bg-secondary-50 text-secondary-600 rounded-full px-4 py-2 mb-6">
+              <i class="fas fa-award mr-2"></i>
+              <span class="font-medium">Nos Engagements</span>
+            </div>
+            <h2 class="font-poppins font-bold text-3xl md:text-5xl text-slate-900 mb-6">
+              Certifications &
+              <span class="bg-gradient-to-r from-secondary-600 to-primary-600 bg-clip-text text-transparent">
+                Engagements
+              </span>
+            </h2>
+            <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Notre engagement pour la qualité, l'éthique et l'excellence dans tous nos projets d'impact social.
+            </p>
+          </div>
+          
+          <!-- Certifications Grid -->
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Certification 1 -->
+            <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-secondary-200 text-center">
+              <div class="w-20 h-20 bg-gradient-to-br from-secondary-500 to-primary-500 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h3 class="font-poppins font-bold text-xl text-slate-900 mb-4">Sécurité des Données</h3>
+              <p class="text-slate-600 leading-relaxed">
+                Certification ISO 27001 pour la sécurité de l'information et protection des données personnelles.
+              </p>
+            </div>
+            
+            <!-- Certification 2 -->
+            <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-primary-200 text-center">
+              <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-leaf"></i>
+              </div>
+              <h3 class="font-poppins font-bold text-xl text-slate-900 mb-4">Développement Durable</h3>
+              <p class="text-slate-600 leading-relaxed">
+                Engagement pour des solutions numériques éco-responsables et respectueuses de l'environnement.
+              </p>
+            </div>
+            
+            <!-- Certification 3 -->
+            <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-accent-200 text-center">
+              <div class="w-20 h-20 bg-gradient-to-br from-accent-500 to-secondary-500 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-heart"></i>
+              </div>
+              <h3 class="font-poppins font-bold text-xl text-slate-900 mb-4">Impact Social</h3>
+              <p class="text-slate-600 leading-relaxed">
+                Certification B-Corp pour notre engagement en faveur de l'impact social et environnemental.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Équipe -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+      <div class="absolute inset-0 bg-grid-gray-100 opacity-30"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-4xl md:text-5xl font-bold font-poppins text-gray-900 mb-6">
+            Notre <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-purple-600">Équipe</span>
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Des experts passionnés qui donnent vie à vos projets technologiques avec créativité et excellence
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Membre 1 -->
+          <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+            <div class="relative overflow-hidden">
+              <img src="img/team1.jpg" alt="Cheikh Tidiane Samba BA" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold font-poppins text-gray-900 mb-2">Cheikh Tidiane Samba BA</h3>
+              <p class="text-primary-600 font-medium mb-3">Fondateur & Directeur Technique</p>
+              <p class="text-gray-600 text-sm mb-4">Expert en transformation numérique et innovation technologique au service de l'impact social.</p>
+              <div class="flex justify-center space-x-3">
+                <a href="#" class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors">
+                  <i class="fab fa-linkedin text-sm"></i>
+                </a>
+                <a href="#" class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors">
+                  <i class="fab fa-twitter text-sm"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Membre 2 -->
+          <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+            <div class="relative overflow-hidden">
+              <img src="img/team2.jpg" alt="Responsable Projets" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold font-poppins text-gray-900 mb-2">Marie Dupont</h3>
+              <p class="text-primary-600 font-medium mb-3">Responsable Projets</p>
+              <p class="text-gray-600 text-sm mb-4">Spécialiste en gestion de projets digitaux et coordination d'équipes techniques.</p>
+              <div class="flex justify-center space-x-3">
+                <a href="#" class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors">
+                  <i class="fab fa-linkedin text-sm"></i>
+                </a>
+                <a href="#" class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors">
+                  <i class="fab fa-github text-sm"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Membre 3 - Ajout pour équilibrer la grille -->
+          <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+            <div class="relative overflow-hidden">
+              <div class="w-full h-64 bg-gradient-to-br from-primary-100 to-purple-100 flex items-center justify-center">
+                <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-lg">
+                  <i class="fas fa-user-plus text-3xl text-primary-600"></i>
+                </div>
+              </div>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold font-poppins text-gray-900 mb-2">Rejoignez-nous</h3>
+              <p class="text-primary-600 font-medium mb-3">Votre talent nous intéresse</p>
+              <p class="text-gray-600 text-sm mb-4">Nous recrutons des profils passionnés pour renforcer notre équipe.</p>
+              <a href="contact.html" class="inline-flex items-center px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors">
+                <span class="text-sm font-medium">Postuler</span>
+                <i class="fas fa-arrow-right ml-2 text-xs"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold font-poppins text-gray-900 mb-4">
+            Questions Fréquentes
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Trouvez rapidement les réponses à vos questions sur nos services et notre approche
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <!-- FAQ Item 1 -->
+          <div class="faq-item bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
+            <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-100 transition-colors duration-200" 
+                    aria-expanded="false"
+                    data-target="faq-1">
+              <span class="text-lg font-semibold text-gray-900">Quels types de projets réalisez-vous ?</span>
+              <i class="fas fa-chevron-down text-primary-600 transform transition-transform duration-200"></i>
+            </button>
+            <div class="faq-content hidden px-8 pb-6" id="faq-1">
+              <p class="text-gray-600 leading-relaxed">
+                Nous accompagnons les associations, ONG et institutions dans la digitalisation, le développement d'applications web et mobiles, la gestion de projets numériques, l'innovation sociale et la transformation digitale. Chaque projet est adapté aux besoins spécifiques de nos clients.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-item bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
+            <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-100 transition-colors duration-200" 
+                    aria-expanded="false"
+                    data-target="faq-2">
+              <span class="text-lg font-semibold text-gray-900">Comment débuter avec Opentech ?</span>
+              <i class="fas fa-chevron-down text-primary-600 transform transition-transform duration-200"></i>
+            </button>
+            <div class="faq-content hidden px-8 pb-6" id="faq-2">
+              <p class="text-gray-600 leading-relaxed">
+                Contactez-nous via notre formulaire de contact ou par téléphone pour une première discussion gratuite. Nous analysons ensemble vos besoins et vous proposons une solution personnalisée avec un devis détaillé.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-item bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
+            <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-100 transition-colors duration-200" 
+                    aria-expanded="false"
+                    data-target="faq-3">
+              <span class="text-lg font-semibold text-gray-900">Quels sont vos délais de réalisation ?</span>
+              <i class="fas fa-chevron-down text-primary-600 transform transition-transform duration-200"></i>
+            </button>
+            <div class="faq-content hidden px-8 pb-6" id="faq-3">
+              <p class="text-gray-600 leading-relaxed">
+                Les délais varient selon la complexité du projet. Un site vitrine peut être réalisé en 2-4 semaines, tandis qu'une application complexe peut nécessiter 3-6 mois. Nous définissons ensemble un planning réaliste dès le début du projet.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="faq-item bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
+            <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-100 transition-colors duration-200" 
+                    aria-expanded="false"
+                    data-target="faq-4">
+              <span class="text-lg font-semibold text-gray-900">Proposez-vous de la maintenance après livraison ?</span>
+              <i class="fas fa-chevron-down text-primary-600 transform transition-transform duration-200"></i>
+            </button>
+            <div class="faq-content hidden px-8 pb-6" id="faq-4">
+              <p class="text-gray-600 leading-relaxed">
+                Oui, nous proposons des contrats de maintenance et de support technique adaptés à vos besoins. Cela inclut les mises à jour, la sécurité, l'hébergement et le support utilisateur pour assurer la pérennité de votre solution.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="faq-item bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
+            <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-100 transition-colors duration-200" 
+                    aria-expanded="false"
+                    data-target="faq-5">
+              <span class="text-lg font-semibold text-gray-900">Travaillez-vous avec des budgets limités ?</span>
+              <i class="fas fa-chevron-down text-primary-600 transform transition-transform duration-200"></i>
+            </button>
+            <div class="faq-content hidden px-8 pb-6" id="faq-5">
+              <p class="text-gray-600 leading-relaxed">
+                Absolument ! Nous comprenons les contraintes budgétaires des associations et ONG. Nous proposons des solutions modulaires et évolutives, ainsi que des tarifs préférentiels pour les organisations à but non lucratif.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="text-center mt-12">
+          <p class="text-gray-600 mb-6">Vous ne trouvez pas la réponse à votre question ?</p>
+          <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl">
+            <i class="fas fa-comments mr-2"></i>
+            Contactez-nous
+          </a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>Opentech</h3>
-        <p>Votre partenaire de confiance pour la transformation numérique</p>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <!-- Company Info -->
+        <div class="md:col-span-2">
+          <h3 class="text-2xl font-bold font-poppins text-white mb-4">Opentech</h3>
+          <p class="text-gray-300 mb-6 max-w-md">
+            Votre partenaire de confiance pour la transformation numérique et l'innovation technologique au service de l'impact social.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center hover:bg-primary-700 transition-colors">
+              <i class="fab fa-linkedin text-white"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center hover:bg-primary-700 transition-colors">
+              <i class="fab fa-twitter text-white"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center hover:bg-primary-700 transition-colors">
+              <i class="fab fa-github text-white"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">Navigation</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-300 hover:text-primary-400 transition-colors">Accueil</a></li>
+            <li><a href="about.html" class="text-gray-300 hover:text-primary-400 transition-colors">À propos</a></li>
+            <li><a href="services.html" class="text-gray-300 hover:text-primary-400 transition-colors">Services</a></li>
+            <li><a href="projects.html" class="text-gray-300 hover:text-primary-400 transition-colors">Réalisations</a></li>
+            <li><a href="contact.html" class="text-gray-300 hover:text-primary-400 transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact Info -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">Contact</h4>
+          <ul class="space-y-2 text-gray-300">
+            <li class="flex items-center">
+              <i class="fas fa-envelope mr-2 text-primary-400"></i>
+              contact@opentech.fr
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-phone mr-2 text-primary-400"></i>
+              +33 1 23 45 67 89
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-map-marker-alt mr-2 text-primary-400"></i>
+              Paris, France
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="footer-section">
-        <h3>Contact</h3>
-        <p><i class="fas fa-envelope"></i> cheikhtidianesamba.ba@ucad.edu.sn</p>
-        <p><i class="fas fa-phone"></i> +221 70 609 83 43</p>
-      </div>
-      <div class="footer-section">
-        <h3>Suivez-nous</h3>
-        <div class="social-links">
-          <a href="https://linkedin.com/in/opentech221" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-          <a href="https://twitter.com/opentech221" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-          <a href="https://facebook.com/opentech221" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+      
+      <!-- Bottom Bar -->
+      <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div class="text-gray-400 text-sm mb-4 md:mb-0">
+          © 2024 Opentech. Tous droits réservés.
+        </div>
+        <div class="flex space-x-6 text-sm">
+          <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors">Politique de confidentialité</a>
+          <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors">Conditions d'utilisation</a>
+          <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors">Mentions légales</a>
         </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 Opentech. Tous droits réservés. | <a href="mentions-legales.html">Mentions légales</a> | <a href="confidentialite.html">Politique de confidentialité</a></p>
-    </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/modern.js"></script>
 </body>
 </html>

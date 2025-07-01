@@ -1,0 +1,282 @@
+<!-- Navigation Bar Component -->
+<!-- Usage: Include this file and set data-active-page attribute on the body tag -->
+<!-- Example: <body data-active-page="home"> for index.html -->
+<!-- Pages: home, about, services, projects, contact -->
+
+<nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-sm z-50 transition-all duration-300" id="navbar">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+          <a href="index.html" class="flex items-center space-x-2 group">
+              <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center transform group-hover:scale-105 transition-transform duration-200">
+                  <i class="fas fa-code text-white text-sm sm:text-lg"></i>
+              </div>
+              <span class="text-lg sm:text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Opentech
+              </span>
+          </a>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:block">
+        <div class="ml-10 flex items-baseline space-x-6 xl:space-x-8">
+          <a href="index.html" 
+             class="nav-link nav-home px-3 py-2 text-sm font-medium transition-colors"
+             data-page="home">Accueil</a>
+          <a href="about.html" 
+             class="nav-link nav-about px-3 py-2 text-sm font-medium transition-colors"
+             data-page="about">À propos</a>
+          <a href="services.html" 
+             class="nav-link nav-services px-3 py-2 text-sm font-medium transition-colors"
+             data-page="services">Services</a>
+          <a href="projects.html" 
+             class="nav-link nav-projects px-3 py-2 text-sm font-medium transition-colors"
+             data-page="projects">Réalisations</a>
+          <a href="contact.html" 
+             class="nav-link nav-contact px-3 py-2 text-sm font-medium transition-colors"
+             data-page="contact">Contact</a>
+        </div>
+      </div>
+      
+      <!-- CTA Button -->
+      <div class="hidden lg:block">
+        <a href="contact.html" class="cta-button bg-primary-600 text-white px-4 py-2 xl:px-6 xl:py-2 rounded-lg text-sm font-medium hover:bg-primary-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl">
+          Démarrer un projet
+        </a>
+      </div>
+      
+      <!-- Mobile menu button -->
+      <div class="lg:hidden">
+        <button type="button" class="mobile-menu-btn bg-gray-50 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500 transition-colors" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Ouvrir le menu principal</span>
+          <!-- Hamburger icon -->
+          <svg class="hamburger-icon block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          <!-- Close icon -->
+          <svg class="close-icon hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Mobile Navigation Menu -->
+  <div class="lg:hidden mobile-menu hidden">
+    <!-- Overlay pour fermer le menu en cliquant à l'extérieur -->
+    <div class="mobile-menu-overlay fixed inset-0 bg-black bg-opacity-50 z-40"></div>
+    
+    <!-- Menu mobile -->
+    <div class="mobile-menu-content fixed top-16 left-0 right-0 bg-white shadow-lg border-t border-gray-200 z-50 transform transition-transform duration-300 ease-in-out">
+      <div class="px-4 pt-4 pb-6 space-y-2">
+        <a href="index.html" 
+           class="mobile-nav-link mobile-nav-home block px-4 py-3 text-base font-medium transition-colors rounded-lg"
+           data-page="home">
+           <i class="fas fa-home w-5 mr-3 text-gray-400"></i>
+           Accueil
+        </a>
+        <a href="about.html" 
+           class="mobile-nav-link mobile-nav-about block px-4 py-3 text-base font-medium transition-colors rounded-lg"
+           data-page="about">
+           <i class="fas fa-info-circle w-5 mr-3 text-gray-400"></i>
+           À propos
+        </a>
+        <a href="services.html" 
+           class="mobile-nav-link mobile-nav-services block px-4 py-3 text-base font-medium transition-colors rounded-lg"
+           data-page="services">
+           <i class="fas fa-cogs w-5 mr-3 text-gray-400"></i>
+           Services
+        </a>
+        <a href="projects.html" 
+           class="mobile-nav-link mobile-nav-projects block px-4 py-3 text-base font-medium transition-colors rounded-lg"
+           data-page="projects">
+           <i class="fas fa-briefcase w-5 mr-3 text-gray-400"></i>
+           Réalisations
+        </a>
+        <a href="contact.html" 
+           class="mobile-nav-link mobile-nav-contact block px-4 py-3 text-base font-medium transition-colors rounded-lg"
+           data-page="contact">
+           <i class="fas fa-envelope w-5 mr-3 text-gray-400"></i>
+           Contact
+        </a>
+        
+        <!-- CTA Button Mobile -->
+        <div class="pt-4 border-t border-gray-200 mt-4">
+          <a href="contact.html" class="cta-button-mobile bg-primary-600 text-white block px-4 py-3 text-base font-medium rounded-lg hover:bg-primary-700 transition-colors text-center transform hover:scale-105 duration-200 shadow-lg">
+            <i class="fas fa-rocket mr-2"></i>
+            Démarrer un projet
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- JavaScript pour gérer l'état actif de la navigation -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Récupérer la page active depuis l'attribut data-active-page du body
+    const activePage = document.body.getAttribute('data-active-page');
+    
+    if (activePage) {
+        // Styles par défaut pour tous les liens
+        const allNavLinks = document.querySelectorAll('.nav-link');
+        const allMobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        const ctaButton = document.querySelector('.cta-button');
+        const ctaButtonMobile = document.querySelector('.cta-button-mobile');
+        
+        // Réinitialiser tous les liens
+        allNavLinks.forEach(link => {
+            link.className = 'nav-link text-gray-600 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors';
+        });
+        
+        allMobileNavLinks.forEach(link => {
+            link.className = 'mobile-nav-link text-gray-600 hover:text-primary-600 hover:bg-gray-50 block px-4 py-3 text-base font-medium transition-colors rounded-lg';
+        });
+        
+        // Réinitialiser les boutons CTA
+        if (ctaButton) {
+            ctaButton.classList.remove('active');
+        }
+        if (ctaButtonMobile) {
+            ctaButtonMobile.classList.remove('active');
+        }
+        
+        // Appliquer les styles actifs
+        const activeNavLink = document.querySelector(`.nav-${activePage}`);
+        const activeMobileNavLink = document.querySelector(`.mobile-nav-${activePage}`);
+        
+        if (activeNavLink) {
+            activeNavLink.className = 'nav-link text-primary-600 px-3 py-2 text-sm font-medium border-b-2 border-primary-600';
+        }
+        
+        if (activeMobileNavLink) {
+            activeMobileNavLink.className = 'mobile-nav-link text-primary-600 block px-4 py-3 text-base font-medium bg-primary-50 rounded-lg border-l-4 border-primary-600 font-semibold';
+        }
+        
+        // Activer le bouton CTA si on est sur la page contact
+        if (activePage === 'contact') {
+            if (ctaButton) {
+                ctaButton.classList.add('active');
+            }
+            if (ctaButtonMobile) {
+                ctaButtonMobile.classList.add('active');
+            }
+        }
+    }
+});
+</script>
+
+<!-- CSS supplémentaire pour s'assurer que les styles actifs sont visibles -->
+<style>
+/* Navigation active states - Desktop */
+.nav-link.text-primary-600[class*="border-b-2"] {
+  color: #0284c7 !important;
+  border-bottom: 2px solid #0284c7 !important;
+  font-weight: 600;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 197, 253, 0.05));
+  border-radius: 6px;
+}
+
+/* Styles pour la navigation active - Plus simple et efficace */
+
+/* Effet hover pour les liens non actifs */
+.nav-link:hover:not(.text-white) {
+  color: #0284c7 !important;
+}
+
+.mobile-nav-link:hover:not(.text-white) {
+  color: #0284c7 !important;
+  background-color: #f9fafb !important;
+}
+
+/* Animations et transitions */
+.nav-link {
+  transition: all 0.3s ease !important;
+}
+
+.mobile-nav-link {
+  transition: all 0.3s ease !important;
+}
+
+/* Style pour les boutons actifs avec dégradés personnalisés */
+.nav-link.text-white {
+  background: linear-gradient(135deg, var(--tw-bg-opacity) 0%, rgba(255,255,255,0.1) 100%) !important;
+  animation: pulse-glow 2s infinite alternate !important;
+}
+
+.mobile-nav-link.text-white {
+  background: linear-gradient(135deg, var(--tw-bg-opacity) 0%, rgba(255,255,255,0.1) 100%) !important;
+  animation: slide-in 0.3s ease-out !important;
+}
+
+/* Animations personnalisées */
+@keyframes pulse-glow {
+  0% { box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+  100% { box-shadow: 0 6px 20px rgba(0,0,0,0.3), 0 0 0 2px rgba(255,255,255,0.1); }
+}
+
+@keyframes slide-in {
+  0% { transform: translateX(-10px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* Mobile menu animations */
+.mobile-menu.hidden .mobile-menu-content {
+  transform: translateY(-100%);
+}
+
+.mobile-menu:not(.hidden) .mobile-menu-content {
+  transform: translateY(0);
+}
+
+/* Mobile menu overlay */
+.mobile-menu-overlay {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.mobile-menu:not(.hidden) .mobile-menu-overlay {
+  opacity: 1;
+}
+
+/* Hamburger to X animation */
+.mobile-menu-btn .hamburger-icon {
+  transition: transform 0.2s ease-in-out;
+}
+
+.mobile-menu-btn .close-icon {
+  transition: transform 0.2s ease-in-out;
+}
+
+.mobile-menu-btn[aria-expanded="true"] .hamburger-icon {
+  transform: rotate(90deg);
+}
+
+/* CTA Button active states */
+.cta-button.active {
+  background: linear-gradient(45deg, #16a34a, #22c55e) !important;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4) !important;
+  transform: scale(1.05) !important;
+}
+
+.cta-button-mobile.active {
+  background: linear-gradient(45deg, #16a34a, #22c55e) !important;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4) !important;
+}
+
+.cta-button.active:hover {
+  background: linear-gradient(45deg, #15803d, #16a34a) !important;
+}
+
+.cta-button-mobile.active:hover {
+  background: linear-gradient(45deg, #15803d, #16a34a) !important;
+}
+
+/* Icônes blanches pour les pages actives - Mobile */
+.mobile-nav-link.text-white i {
+  color: white !important;
+}
+</style>
