@@ -14,7 +14,7 @@ async function loadNavigation() {
         }
 
         // Charger le contenu de la navigation
-        const response = await fetch('composants/nav-bar.html');
+        const response = await fetch('/composants/nav-bar.html');
         
         if (!response.ok) {
             throw new Error(`Erreur HTTP: ${response.status}`);
@@ -64,7 +64,7 @@ async function loadFooter() {
         }
 
         // Charger le contenu du footer
-        const response = await fetch('composants/footer.html');
+        const response = await fetch('/composants/footer.html');
         if (!response.ok) {
             throw new Error(`Erreur HTTP: ${response.status}`);
         }
