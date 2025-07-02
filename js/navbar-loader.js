@@ -48,6 +48,44 @@ async function loadNavigation() {
     }
 }
 
+/**
+ * footer Loader - Simple Version
+ * Charge le footer dans #footer-placeholder
+ */
+
+// Fonction pour charger le footer
+async function loadFooter() {
+    try {
+        // Récupérer le placeholder
+        const placeholder = document.getElementById('footer-placeholder');
+        if (!placeholder) {
+            console.warn('Placeholder #footer-placeholder non trouvé');
+            return;
+        }
+
+        // Charger le contenu du footer
+        const response = await fetch('composants/footer.html');
+        if (!response.ok) {
+            throw new Error(`Erreur HTTP: ${response.status}`);
+        }
+        const html = await response.text();
+        // Insérer le HTML dans le placeholder
+        placeholder.innerHTML = html;
+        console.log('✅ Footer chargé avec succès');
+    } catch (error) {
+        console.error('❌ Erreur lors du chargement du footer:', error);
+        // Fallback en cas d'erreur
+        const placeholder = document.getElementById('footer-placeholder');
+        if (placeholder) {
+            placeholder.innerHTML = `
+                <div class="w-full bg-red-50 border-t border-red-200 z-50 p-4 text-center">
+                    <span class="text-red-800 font-medium">Erreur de chargement du footer</span>
+                </div>
+            `;
+        }
+    }
+}
+
 // Fonction pour définir la page active
 function setActivePage() {
     // Déterminer la page active depuis l'URL
@@ -272,6 +310,7 @@ function initMobileMenu() {
 // Chargement automatique au démarrage
 document.addEventListener('DOMContentLoaded', function() {
     loadNavigation();
+    loadFooter();
 });
 
 // Export pour utilisation manuelle
