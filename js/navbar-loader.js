@@ -118,11 +118,11 @@ function updateNavigationState(activePage) {
     
     // Couleurs par page
     const pageColors = {
-        home: { bg: '#059669', bgHover: '#10b981', shadow: 'rgba(5, 150, 105, 0.4)' },
+        home: { bg: '#7c3aed', bgHover: '#a855f7', shadow: 'rgba(124, 58, 237, 0.4)' },
         about: { bg: '#7c3aed', bgHover: '#a855f7', shadow: 'rgba(124, 58, 237, 0.4)' },
-        services: { bg: '#dc2626', bgHover: '#ef4444', shadow: 'rgba(220, 38, 38, 0.4)' },
-        projects: { bg: '#ea580c', bgHover: '#f97316', shadow: 'rgba(234, 88, 12, 0.4)' },
-        contact: { bg: '#0284c7', bgHover: '#0ea5e9', shadow: 'rgba(2, 132, 199, 0.4)' }
+        services: { bg: '#7c3aed', bgHover: '#a855f7', shadow: 'rgba(124, 58, 237, 0.4)' },
+        projects: { bg: '#7c3aed', bgHover: '#a855f7', shadow: 'rgba(124, 58, 237, 0.4)' },
+        contact: { bg: '#7c3aed', bgHover: '#a855f7', shadow: 'rgba(124, 58, 237, 0.4)' },
     };
     
     const colors = pageColors[activePage] || pageColors.contact;
