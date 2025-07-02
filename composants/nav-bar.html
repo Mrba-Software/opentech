@@ -22,19 +22,19 @@
       <div class="hidden lg:block">
         <div class="ml-10 flex items-baseline space-x-6 xl:space-x-8">
           <a href="index.html" 
-             class="nav-link nav-home text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-all duration-200"
+             class="cta-button nav-home bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-2 xl:px-6 xl:py-2 rounded-lg text-sm font-medium hover:bg-primary-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
              data-page="home">Accueil</a>
           <a href="about.html" 
-             class="nav-link nav-about text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-all duration-200"
+             class="cta-button nav-about bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-2 xl:px-6 xl:py-2 rounded-lg text-sm font-medium hover:bg-primary-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
              data-page="about">À propos</a>
           <a href="services.html" 
-             class="nav-link nav-services text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-all duration-200"
+             class="cta-button nav-services bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-2 xl:px-6 xl:py-2 rounded-lg text-sm font-medium hover:bg-primary-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
              data-page="services">Services</a>
           <a href="projects.html" 
-             class="nav-link nav-projects text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-all duration-200"
+             class="cta-button nav-projects bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-2 xl:px-6 xl:py-2 rounded-lg text-sm font-medium hover:bg-primary-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
              data-page="projects">Réalisations</a>
           <a href="contact.html" 
-             class="nav-link nav-contact text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-all duration-200"
+             class="cta-button nav-contact bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-2 xl:px-6 xl:py-2 rounded-lg text-sm font-medium hover:bg-primary-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
              data-page="contact">Contact</a>
         </div>
       </div>
@@ -72,31 +72,31 @@
     <div class="mobile-menu-content fixed top-16 left-0 right-0 bg-white shadow-lg border-t border-gray-200 z-50 transform transition-transform duration-300 ease-in-out">
       <div class="px-4 pt-4 pb-6 space-y-2">
         <a href="index.html" 
-           class="mobile-nav-link mobile-nav-home text-gray-600 hover:text-blue-600 hover:bg-gray-50 block px-4 py-3 text-base font-medium transition-colors rounded-lg"
+           class="cta-button mobile-nav-home block px-4 py-3 text-base hover:bg-purple-200 font-medium transition-colors rounded-lg"
            data-page="home">
            <i class="fas fa-home w-5 mr-3 text-blue-500"></i>
            Accueil
         </a>
         <a href="about.html" 
-           class="mobile-nav-link mobile-nav-about text-gray-600 hover:text-blue-600 hover:bg-gray-50 block px-4 py-3 text-base font-medium transition-colors rounded-lg"
+           class="cta-button mobile-nav-about block px-4 py-3 text-base hover:bg-purple-200 font-medium transition-colors rounded-lg"
            data-page="about">
            <i class="fas fa-info-circle w-5 mr-3 text-blue-500"></i>
            À propos
         </a>
         <a href="services.html" 
-           class="mobile-nav-link mobile-nav-services text-gray-600 hover:text-blue-600 hover:bg-gray-50 block px-4 py-3 text-base font-medium transition-colors rounded-lg"
+           class="cta-button mobile-nav-services block px-4 py-3 text-base hover:bg-purple-200 font-medium transition-colors rounded-lg"
            data-page="services">
            <i class="fas fa-cogs w-5 mr-3 text-blue-500"></i>
            Services
         </a>
         <a href="projects.html" 
-           class="mobile-nav-link mobile-nav-projects text-gray-600 hover:text-blue-600 hover:bg-gray-50 block px-4 py-3 text-base font-medium transition-colors rounded-lg"
+           class="cta-button mobile-nav-projects block px-4 py-3 text-base hover:bg-purple-200 font-medium transition-colors rounded-lg"
            data-page="projects">
            <i class="fas fa-briefcase w-5 mr-3 text-blue-500"></i>
            Réalisations
         </a>
         <a href="contact.html" 
-           class="mobile-nav-link mobile-nav-contact text-gray-600 hover:text-blue-600 hover:bg-gray-50 block px-4 py-3 text-base font-medium transition-colors rounded-lg"
+           class="cta-button mobile-nav-contact block px-4 py-3 text-base hover:bg-purple-200 font-medium transition-colors rounded-lg"
            data-page="contact">
            <i class="fas fa-envelope w-5 mr-3 text-blue-500"></i>
            Contact
@@ -120,146 +120,163 @@ document.addEventListener('DOMContentLoaded', function() {
     // Récupérer la page active depuis l'attribut data-active-page du body
     const activePage = document.body.getAttribute('data-active-page');
     
-    console.log('🎯 Page active détectée:', activePage);
-    
     if (activePage) {
-        // Définir les couleurs par page
-        const pageColors = {
-            home: { bg: '#3b82f6', bgHover: '#1d4ed8', shadow: 'rgba(59, 130, 246, 0.3)' },
-            about: { bg: '#8b5cf6', bgHover: '#7c3aed', shadow: 'rgba(139, 92, 246, 0.3)' },
-            services: { bg: '#10b981', bgHover: '#059669', shadow: 'rgba(16, 185, 129, 0.3)' },
-            projects: { bg: '#f59e0b', bgHover: '#d97706', shadow: 'rgba(245, 158, 11, 0.3)' },
-            contact: { bg: '#ef4444', bgHover: '#dc2626', shadow: 'rgba(239, 68, 68, 0.3)' }
-        };
+        // Styles par défaut pour tous les liens
+        const allNavLinks = document.querySelectorAll('.nav-link');
+        const allMobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        const ctaButton = document.querySelector('.cta-button');
+        const ctaButtonMobile = document.querySelector('.cta-button-mobile');
         
-        const colors = pageColors[activePage] || pageColors.home;
+        // Réinitialiser tous les liens
+        allNavLinks.forEach(link => {
+            link.className = 'nav-link text-gray-600 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors';
+        });
         
-        // Trouver et styliser le lien actif pour le desktop
-        const activeNavLink = document.querySelector(`.nav-${activePage}`);
-        if (activeNavLink) {
-            activeNavLink.style.cssText = `
-                background: linear-gradient(135deg, ${colors.bg}, ${colors.bgHover}) !important;
-                color: white !important;
-                padding: 8px 16px !important;
-                border-radius: 8px !important;
-                font-weight: 600 !important;
-                transform: scale(1.05) !important;
-                box-shadow: 0 4px 12px ${colors.shadow} !important;
-                transition: all 0.3s ease !important;
-                text-decoration: none !important;
-                border: 1px solid rgba(255,255,255,0.2) !important;
-            `;
-            console.log('✅ Style desktop appliqué pour:', activePage);
-        } else {
-            console.warn('❌ Lien desktop non trouvé pour:', activePage);
+        allMobileNavLinks.forEach(link => {
+            link.className = 'mobile-nav-link text-gray-600 hover:text-primary-600 hover:bg-gray-50 block px-4 py-3 text-base font-medium transition-colors rounded-lg';
+        });
+        
+        // Réinitialiser les boutons CTA
+        if (ctaButton) {
+            ctaButton.classList.remove('active');
+        }
+        if (ctaButtonMobile) {
+            ctaButtonMobile.classList.remove('active');
         }
         
-        // Trouver et styliser le lien actif pour le mobile
+        // Appliquer les styles actifs
+        const activeNavLink = document.querySelector(`.nav-${activePage}`);
         const activeMobileNavLink = document.querySelector(`.mobile-nav-${activePage}`);
+        
+        if (activeNavLink) {
+            activeNavLink.className = 'nav-link text-primary-600 px-3 py-2 text-sm font-medium border-b-2 border-primary-600';
+        }
+        
         if (activeMobileNavLink) {
-            activeMobileNavLink.style.cssText = `
-                background: linear-gradient(135deg, ${colors.bg}, ${colors.bgHover}) !important;
-                color: white !important;
-                padding: 12px 16px !important;
-                border-radius: 8px !important;
-                font-weight: 600 !important;
-                box-shadow: 0 4px 12px ${colors.shadow} !important;
-                border-left: 4px solid ${colors.bgHover} !important;
-                margin: 4px 0 !important;
-                text-decoration: none !important;
-                transform: translateX(8px) !important;
-            `;
-            
-            // Styliser l'icône du mobile
-            const icon = activeMobileNavLink.querySelector('i');
-            if (icon) {
-                icon.style.cssText = 'color: white !important;';
+            activeMobileNavLink.className = 'mobile-nav-link text-primary-600 block px-4 py-3 text-base font-medium bg-primary-50 rounded-lg border-l-4 border-primary-600 font-semibold';
+        }
+        
+        // Activer le bouton CTA si on est sur la page contact
+        if (activePage === 'contact') {
+            if (ctaButton) {
+                ctaButton.classList.add('active');
             }
-            
-            console.log('✅ Style mobile appliqué pour:', activePage);
-        } else {
-            console.warn('❌ Lien mobile non trouvé pour:', activePage);
+            if (ctaButtonMobile) {
+                ctaButtonMobile.classList.add('active');
+            }
         }
     }
 });
 </script>
 
-<!-- CSS pour les styles de base et animations -->
+<!-- CSS supplémentaire pour s'assurer que les styles actifs sont visibles -->
 <style>
-/* Styles de base pour la navigation */
-.nav-link {
-    transition: all 0.3s ease !important;
-    display: inline-block;
+/* Navigation active states - Desktop */
+.nav-link.text-primary-600[class*="border-b-2"] {
+  color: #0284c7 !important;
+  border-bottom: 2px solid #0284c7 !important;
+  font-weight: 600;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 197, 253, 0.05));
+  border-radius: 6px;
 }
 
-.nav-link:hover:not([style*="background"]) {
-    color: #3b82f6 !important;
-    transform: translateY(-1px) !important;
+/* Styles pour la navigation active - Plus simple et efficace */
+
+/* Effet hover pour les liens non actifs */
+.nav-link:hover:not(.text-white) {
+  color: #0284c7 !important;
+}
+
+.mobile-nav-link:hover:not(.text-white) {
+  color: #0284c7 !important;
+  background-color: #f9fafb !important;
+}
+
+/* Animations et transitions */
+.nav-link {
+  transition: all 0.3s ease !important;
 }
 
 .mobile-nav-link {
-    transition: all 0.3s ease !important;
-    display: block;
+  transition: all 0.3s ease !important;
 }
 
-.mobile-nav-link:hover:not([style*="background"]) {
-    color: #3b82f6 !important;
-    background-color: #f3f4f6 !important;
+/* Style pour les boutons actifs avec dégradés personnalisés */
+.nav-link.text-white {
+  background: linear-gradient(135deg, var(--tw-bg-opacity) 0%, rgba(255,255,255,0.1) 100%) !important;
+  animation: pulse-glow 2s infinite alternate !important;
 }
 
-/* Animation pour le bouton mobile */
-.mobile-menu-btn {
-    transition: all 0.2s ease !important;
+.mobile-nav-link.text-white {
+  background: linear-gradient(135deg, var(--tw-bg-opacity) 0%, rgba(255,255,255,0.1) 100%) !important;
+  animation: slide-in 0.3s ease-out !important;
 }
 
-.mobile-menu-btn:hover {
-    transform: scale(1.05) !important;
+/* Animations personnalisées */
+@keyframes pulse-glow {
+  0% { box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+  100% { box-shadow: 0 6px 20px rgba(0,0,0,0.3), 0 0 0 2px rgba(255,255,255,0.1); }
 }
 
-/* Menu mobile slide animation */
-.mobile-menu {
-    transition: all 0.3s ease-in-out !important;
+@keyframes slide-in {
+  0% { transform: translateX(-10px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
 }
 
+/* Mobile menu animations */
 .mobile-menu.hidden .mobile-menu-content {
-    transform: translateY(-100%) !important;
-    opacity: 0 !important;
+  transform: translateY(-100%);
 }
 
 .mobile-menu:not(.hidden) .mobile-menu-content {
-    transform: translateY(0) !important;
-    opacity: 1 !important;
+  transform: translateY(0);
 }
 
-/* Overlay animation */
+/* Mobile menu overlay */
 .mobile-menu-overlay {
-    opacity: 0;
-    transition: opacity 0.3s ease !important;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .mobile-menu:not(.hidden) .mobile-menu-overlay {
-    opacity: 1;
+  opacity: 1;
 }
 
-/* Animation des icônes hamburger */
-.hamburger-icon, .close-icon {
-    transition: all 0.2s ease !important;
+/* Hamburger to X animation */
+.mobile-menu-btn .hamburger-icon {
+  transition: transform 0.2s ease-in-out;
 }
 
-/* Animation hover sur le CTA */
-.cta-button {
-    transition: all 0.3s ease !important;
+.mobile-menu-btn .close-icon {
+  transition: transform 0.2s ease-in-out;
 }
 
-.cta-button:hover {
-    transform: scale(1.05) !important;
-    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4) !important;
+.mobile-menu-btn[aria-expanded="true"] .hamburger-icon {
+  transform: rotate(90deg);
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-    .mobile-menu-content {
-        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out !important;
-    }
+/* CTA Button active states */
+.cta-button.active {
+  background: linear-gradient(45deg, #16a34a, #22c55e) !important;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4) !important;
+  transform: scale(1.05) !important;
+}
+
+.cta-button-mobile.active {
+  background: linear-gradient(45deg, #16a34a, #22c55e) !important;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4) !important;
+}
+
+.cta-button.active:hover {
+  background: linear-gradient(45deg, #15803d, #16a34a) !important;
+}
+
+.cta-button-mobile.active:hover {
+  background: linear-gradient(45deg, #15803d, #16a34a) !important;
+}
+
+/* Icônes blanches pour les pages actives - Mobile */
+.mobile-nav-link.text-white i {
+  color: white !important;
 }
 </style>

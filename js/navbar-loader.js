@@ -125,69 +125,81 @@ function setActivePage() {
 function updateNavigationState(activePage) {
     console.log(`🔄 Mise à jour navigation pour: ${activePage}`);
     
-    // Définir les couleurs par page
-    const pageColors = {
-        home: { bg: '#3b82f6', bgHover: '#1d4ed8', shadow: 'rgba(59, 130, 246, 0.3)' },
-        about: { bg: '#8b5cf6', bgHover: '#7c3aed', shadow: 'rgba(139, 92, 246, 0.3)' },
-        services: { bg: '#10b981', bgHover: '#059669', shadow: 'rgba(16, 185, 129, 0.3)' },
-        projects: { bg: '#f59e0b', bgHover: '#d97706', shadow: 'rgba(245, 158, 11, 0.3)' },
-        contact: { bg: '#ef4444', bgHover: '#dc2626', shadow: 'rgba(239, 68, 68, 0.3)' }
-    };
-    
-    const colors = pageColors[activePage] || pageColors.home;
-    
-    // Réinitialiser tous les liens de navigation
+    // Réinitialiser tous les liens
     const allNavLinks = document.querySelectorAll('.nav-link');
     const allMobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    const ctaButton = document.querySelector('.cta-button');
+    const ctaButtonMobile = document.querySelector('.cta-button-mobile');
     
-    // Réinitialiser les styles desktop
-    allNavLinks.forEach(link => {
-        link.style.cssText = '';
-        link.className = 'nav-link text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-all duration-200';
+    console.log(`📊 Éléments trouvés: ${allNavLinks.length} desktop, ${allMobileNavLinks.length} mobile`);
+    
+    // Réinitialiser tous les styles
+    allNavLinks.forEach((link, index) => {
+        link.className = 'nav-link text-gray-600 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors';
+        link.style.cssText = ''; // Supprimer les styles inline
     });
     
-    // Réinitialiser les styles mobile
-    allMobileNavLinks.forEach(link => {
-        link.style.cssText = '';
-        link.className = 'mobile-nav-link text-gray-600 hover:text-blue-600 hover:bg-gray-50 block px-4 py-3 text-base font-medium transition-colors rounded-lg';
+    allMobileNavLinks.forEach((link, index) => {
+        link.className = 'mobile-nav-link text-gray-600 hover:text-primary-600 hover:bg-gray-50 block px-4 py-3 text-base font-medium transition-colors rounded-lg';
+        link.style.cssText = ''; // Supprimer les styles inline
         const icon = link.querySelector('i');
-        if (icon) icon.style.cssText = '';
+        if (icon) icon.style.cssText = ''; // Réinitialiser l'icône
     });
     
-    // Appliquer les styles actifs pour le desktop
+    // Réinitialiser les boutons CTA
+    if (ctaButton) {
+        ctaButton.classList.remove('active');
+    }
+    if (ctaButtonMobile) {
+        ctaButtonMobile.classList.remove('active');
+    }
+    
+    // Couleurs par page
+    const pageColors = {
+        home: { bg: '#7c3aed', bgHover: '#a855f7', shadow: 'rgba(124, 58, 237, 0.4)' },
+        about: { bg: '#7c3aed', bgHover: '#a855f7', shadow: 'rgba(124, 58, 237, 0.4)' },
+        services: { bg: '#7c3aed', bgHover: '#a855f7', shadow: 'rgba(124, 58, 237, 0.4)' },
+        projects: { bg: '#7c3aed', bgHover: '#a855f7', shadow: 'rgba(124, 58, 237, 0.4)' },
+        contact: { bg: '#7c3aed', bgHover: '#a855f7', shadow: 'rgba(124, 58, 237, 0.4)' },
+    };
+    
+    const colors = pageColors[activePage] || pageColors.contact;
+    
+    // Appliquer les styles actifs
     const activeNavLink = document.querySelector(`.nav-${activePage}`);
+    const activeMobileNavLink = document.querySelector(`.mobile-nav-${activePage}`);
+    
     if (activeNavLink) {
+        // Appliquer les styles avec CSS inline pour être sûr qu'ils s'affichent
         activeNavLink.style.cssText = `
             background: linear-gradient(135deg, ${colors.bg}, ${colors.bgHover}) !important;
             color: white !important;
-            padding: 8px 16px !important;
+            padding: 10px 16px !important;
             border-radius: 8px !important;
-            font-weight: 600 !important;
+            font-weight: bold !important;
             transform: scale(1.05) !important;
-            box-shadow: 0 4px 12px ${colors.shadow} !important;
+            box-shadow: 0 4px 15px ${colors.shadow} !important;
+            border-bottom: 2px solid ${colors.bg} !important;
             transition: all 0.3s ease !important;
             text-decoration: none !important;
-            border: 1px solid rgba(255,255,255,0.2) !important;
         `;
         console.log(`🎨 Desktop nav actif avec couleur ${colors.bg}`);
     } else {
         console.warn(`❌ Lien desktop .nav-${activePage} non trouvé`);
     }
     
-    // Appliquer les styles actifs pour le mobile
-    const activeMobileNavLink = document.querySelector(`.mobile-nav-${activePage}`);
     if (activeMobileNavLink) {
+        // Appliquer les styles avec CSS inline pour le mobile
         activeMobileNavLink.style.cssText = `
             background: linear-gradient(135deg, ${colors.bg}, ${colors.bgHover}) !important;
             color: white !important;
             padding: 12px 16px !important;
             border-radius: 8px !important;
-            font-weight: 600 !important;
-            box-shadow: 0 4px 12px ${colors.shadow} !important;
-            border-left: 4px solid ${colors.bgHover} !important;
+            font-weight: bold !important;
+            box-shadow: 0 4px 15px ${colors.shadow} !important;
+            border-left: 4px solid ${colors.bg} !important;
             margin: 4px 0 !important;
             text-decoration: none !important;
-            transform: translateX(8px) !important;
         `;
         
         // Rendre l'icône blanche aussi
@@ -199,6 +211,16 @@ function updateNavigationState(activePage) {
         console.log(`📱 Mobile nav actif avec couleur ${colors.bg}`);
     } else {
         console.warn(`❌ Lien mobile .mobile-nav-${activePage} non trouvé`);
+    }
+    
+    // Activer le bouton CTA si on est sur la page contact
+    if (activePage === 'contact') {
+        if (ctaButton) {
+            ctaButton.classList.add('active');
+        }
+        if (ctaButtonMobile) {
+            ctaButtonMobile.classList.add('active');
+        }
     }
 }
 
