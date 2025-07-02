@@ -14,7 +14,9 @@
       "default",
       {
         "ignore": [
-          "backdrop-filter"
+          "backdrop-filter",
+          "-webkit-overflow-scrolling",
+          "image-rendering: crisp-edges"
         ]
       }
     ],
