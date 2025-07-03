@@ -159,6 +159,7 @@ function updateNavigationState(activePage) {
         home: { bg: '#7c3aed', bgHover: '#a855f7', shadow: 'rgba(124, 58, 237, 0.4)' },
         about: { bg: '#7c3aed', bgHover: '#a855f7', shadow: 'rgba(124, 58, 237, 0.4)' },
         services: { bg: '#7c3aed', bgHover: '#a855f7', shadow: 'rgba(124, 58, 237, 0.4)' },
+        programmes: { bg: '#6366f1', bgHover: '#8b5cf6', shadow: 'rgba(99, 102, 241, 0.4)' },
         projects: { bg: '#7c3aed', bgHover: '#a855f7', shadow: 'rgba(124, 58, 237, 0.4)' },
         contact: { bg: '#7c3aed', bgHover: '#a855f7', shadow: 'rgba(124, 58, 237, 0.4)' },
     };
