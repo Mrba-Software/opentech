@@ -553,6 +553,106 @@ class PerformanceMonitor {
   }
 }
 
+// Counter Animation Management
+class CounterAnimation {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+    this.animateCounters();
+  }
+
+  animateCounters() {
+    // Observer pour déclencher l'animation quand les compteurs deviennent visibles
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.startCounterAnimation(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    // Chercher tous les compteurs potentiels avec différents sélecteurs
+    const counterSelectors = [
+      '.text-3xl.font-bold.text-yellow-400', // Pour programmes.html
+      '.counter-number', // Classe générique pour d'autres pages
+      '[data-counter]', // Attribut data pour identifier les compteurs
+      '.stat-number', // Autre classe possible
+    ];
+
+    counterSelectors.forEach(selector => {
+      const counters = document.querySelectorAll(selector);
+      counters.forEach(counter => {
+        counterObserver.observe(counter);
+      });
+    });
+  }
+
+  startCounterAnimation(counter) {
+    const textContent = counter.textContent.trim();
+    
+    // Extraire le nombre et les suffixes
+    let target = 0;
+    let hasPlus = textContent.includes('+');
+    let hasPercent = textContent.includes('%');
+    let hasM = textContent.includes('M');
+    let hasSlash = textContent.includes('/');
+    
+    // Traitement spécial pour différents formats
+    if (hasSlash) {
+      // Pour les formats comme "24/7"
+      const parts = textContent.split('/');
+      target = parseInt(parts[0]);
+      if (isNaN(target)) return;
+      
+      const timer = setInterval(() => {
+        if (target <= 24) {
+          counter.textContent = textContent; // Afficher directement
+          clearInterval(timer);
+        }
+      }, 100);
+      return;
+    } else if (hasM) {
+      // Pour les formats comme "3M+"
+      target = parseInt(textContent.replace(/[^\d]/g, ''));
+    } else {
+      // Pour les autres formats
+      target = parseInt(textContent.replace(/[^\d]/g, ''));
+    }
+    
+    // Ne traiter que si c'est un nombre valide
+    if (!isNaN(target) && target > 0) {
+      const duration = 2000; // 2 secondes
+      const increment = target / (duration / 30);
+      let current = 0;
+      
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          // Construire le texte final avec les suffixes appropriés
+          let finalText = target.toString();
+          if (hasM) finalText += 'M';
+          if (hasPlus) finalText += '+';
+          if (hasPercent) finalText += '%';
+          
+          counter.textContent = finalText;
+          clearInterval(timer);
+        } else {
+          // Construire le texte intermédiaire
+          let currentText = Math.floor(current).toString();
+          if (hasM) currentText += 'M';
+          if (hasPlus) currentText += '+';
+          if (hasPercent) currentText += '%';
+          
+          counter.textContent = currentText;
+        }
+      }, 30);
+    }
+  }
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize core components
@@ -561,6 +661,7 @@ document.addEventListener('DOMContentLoaded', () => {
   new FormManager();
   new AnimationObserver();
   new FAQManager();
+  new CounterAnimation();
   
   // Initialize performance monitoring in development
   if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
@@ -581,6 +682,7 @@ if (typeof module !== 'undefined' && module.exports) {
     FormManager,
     AnimationObserver,
     FAQManager,
+    CounterAnimation,
     Utils
   };
 }
