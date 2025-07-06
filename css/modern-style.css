@@ -994,17 +994,18 @@ select:focus {
     backdrop-filter: blur(12px);
   }
   
+  /* Force white background for mobile menu regardless of system theme */
   .mobile-menu-content {
-    background-color: #1f2937;
-    border-color: #374151;
+    background-color: #ffffff !important;
+    border-color: #e5e7eb !important;
   }
   
   .mobile-nav-link {
-    color: #f3f4f6;
+    color: #374151;
   }
   
   .mobile-nav-link:hover {
-    background-color: #374151;
+    background-color: #f3f4f6;
   }
 }
 
