@@ -113,6 +113,9 @@ function setActivePage() {
         case 'contact.html':
             activePage = 'contact';
             break;
+        case 'parrainage.html':
+            activePage = 'parrainage';
+            break;
     }
     
     // Définir l'attribut sur le body
@@ -165,6 +168,7 @@ function updateNavigationState(activePage) {
         programmes: { bg: '#7c3aed', bgHover: '#a855f7', shadow: 'rgba(124, 58, 237, 0.4)' },
         projects: { bg: '#7c3aed', bgHover: '#a855f7', shadow: 'rgba(124, 58, 237, 0.4)' },
         contact: { bg: '#7c3aed', bgHover: '#a855f7', shadow: 'rgba(124, 58, 237, 0.4)' },
+        parrainage: { bg: '#7c3aed', bgHover: '#a855f7', shadow: 'rgba(124, 58, 237, 0.4)' },
     };
     
     const colors = pageColors[activePage] || pageColors.contact;
