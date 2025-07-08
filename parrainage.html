@@ -130,15 +130,15 @@
                     <!-- Hero Stats -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 animate-slide-up" style="animation-delay: 0.2s;">
                         <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                            <div class="text-3xl md:text-4xl font-bold text-white mb-2">50+</div>
+                            <div class="text-3xl md:text-4xl font-bold text-white mb-2 counter-number">50+</div>
                             <div class="text-white/80">Organisations Parrainées</div>
                         </div>
                         <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                            <div class="text-3xl md:text-4xl font-bold text-white mb-2">100K+</div>
+                            <div class="text-3xl md:text-4xl font-bold text-white mb-2 counter-number">100K+</div>
                             <div class="text-white/80">Bénéficiaires Impactés</div>
                         </div>
                         <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                            <div class="text-3xl md:text-4xl font-bold text-white mb-2">95%</div>
+                            <div class="text-3xl md:text-4xl font-bold text-white mb-2 counter-number">95%</div>
                             <div class="text-white/80">Taux de Réussite</div>
                         </div>
                     </div>
@@ -237,6 +237,7 @@
                                 <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Formation</span>
                                 <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Internet</span>
                             </div>
+                            <!-- Progress bars statiques pour chaque organisation -->
                             <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
                                 <div class="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full" style="width: 65%"></div>
                             </div>
@@ -266,6 +267,7 @@
                                 <span class="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">Tablettes</span>
                                 <span class="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">Formation</span>
                             </div>
+                            <!-- Progress bars statiques pour chaque organisation -->
                             <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
                                 <div class="bg-gradient-to-r from-green-500 to-emerald-500 h-2 rounded-full" style="width: 40%"></div>
                             </div>
@@ -295,6 +297,7 @@
                                 <span class="px-3 py-1 bg-orange-100 text-orange-800 text-xs rounded-full">Smartphones</span>
                                 <span class="px-3 py-1 bg-orange-100 text-orange-800 text-xs rounded-full">Formation</span>
                             </div>
+                            <!-- Progress bars statiques pour chaque organisation -->
                             <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
                                 <div class="bg-gradient-to-r from-orange-500 to-amber-500 h-2 rounded-full" style="width: 80%"></div>
                             </div>
@@ -410,6 +413,58 @@
                             </p>
                         </div>
                     </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section FAQ Parrainage -->
+        <section class="py-20 lg:py-24 bg-gray-50" id="faq-parrainage">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold font-poppins text-gray-900 mb-4">
+                        Foire Aux Questions <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600">Parrainage</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                        Retrouvez ici les réponses aux questions les plus fréquentes sur le parrainage d'organisations.
+                    </p>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <button class="faq-toggle flex items-center w-full text-left py-4 px-6 bg-white rounded-lg shadow group transition hover:bg-pink-50" data-target="faq1" aria-expanded="false">
+                            <span class="flex-1 font-semibold text-gray-900">Comment choisir l'organisation à parrainer ?</span>
+                            <i class="fas fa-chevron-down ml-4 text-pink-600 transition-transform duration-300"></i>
+                        </button>
+                        <div id="faq1" class="hidden px-6 pb-4 text-gray-700">
+                            Vous pouvez sélectionner l'organisation qui correspond le mieux à vos valeurs et à l'impact que vous souhaitez avoir, directement dans le formulaire de parrainage.
+                        </div>
+                    </div>
+                    <div>
+                        <button class="faq-toggle flex items-center w-full text-left py-4 px-6 bg-white rounded-lg shadow group transition hover:bg-pink-50" data-target="faq2" aria-expanded="false">
+                            <span class="flex-1 font-semibold text-gray-900">Puis-je parrainer plusieurs organisations ?</span>
+                            <i class="fas fa-chevron-down ml-4 text-pink-600 transition-transform duration-300"></i>
+                        </button>
+                        <div id="faq2" class="hidden px-6 pb-4 text-gray-700">
+                            Oui, il est possible de parrainer autant d'organisations que vous le souhaitez, en remplissant un formulaire pour chacune.
+                        </div>
+                    </div>
+                    <div>
+                        <button class="faq-toggle flex items-center w-full text-left py-4 px-6 bg-white rounded-lg shadow group transition hover:bg-pink-50" data-target="faq3" aria-expanded="false">
+                            <span class="flex-1 font-semibold text-gray-900">Comment suivre l'impact de mon parrainage ?</span>
+                            <i class="fas fa-chevron-down ml-4 text-pink-600 transition-transform duration-300"></i>
+                        </button>
+                        <div id="faq3" class="hidden px-6 pb-4 text-gray-700">
+                            Vous recevrez des rapports réguliers et des mises à jour sur l'utilisation de votre parrainage et l'impact généré.
+                        </div>
+                    </div>
+                    <div>
+                        <button class="faq-toggle flex items-center w-full text-left py-4 px-6 bg-white rounded-lg shadow group transition hover:bg-pink-50" data-target="faq4" aria-expanded="false">
+                            <span class="flex-1 font-semibold text-gray-900">Mon parrainage est-il sécurisé ?</span>
+                            <i class="fas fa-chevron-down ml-4 text-pink-600 transition-transform duration-300"></i>
+                        </button>
+                        <div id="faq4" class="hidden px-6 pb-4 text-gray-700">
+                            Oui, toutes les transactions et vos informations personnelles sont protégées et ne seront jamais partagées sans votre consentement.
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

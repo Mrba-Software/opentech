@@ -561,6 +561,7 @@ class CounterAnimation {
 
   init() {
     this.animateCounters();
+    // Suppression complète de l'animation des barres de progression
   }
 
   animateCounters() {
